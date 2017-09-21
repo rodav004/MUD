@@ -16,7 +16,7 @@ public class Character extends GameObject {
 	* @return A list of the names in this character's inventory.
 	*/
 	public List<String> getItems() {
-		throw new UnsupportedOperationException()
+		throw new UnsupportedOperationException();
 	}
 	
 	/**
