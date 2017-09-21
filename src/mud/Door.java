@@ -2,7 +2,7 @@ package mud;
 
 public class Door {
 	String direction;
-	Room rooms;
+	Room room;
 
 	public Door(Room room, String direction) {
 		this.room = room;
