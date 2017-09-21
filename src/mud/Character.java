@@ -10,6 +10,10 @@ public class Character extends GameObject {
 		this.inventory = inventory;
 	}
 	
+	/** 
+	* Retrieve the Item objects in this Character's inventory.
+	* @return A list of Item objects this character holds.
+	*/
 	public String getItems() {
 		List<Item> items = this.inventory;
 		for (Item item : items) {
