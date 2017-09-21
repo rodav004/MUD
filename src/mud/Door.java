@@ -1,9 +1,9 @@
 package mud;
 
 public class Door {
-	Room[] rooms;
+	List<Room> rooms;
 
-	public Door(Room[] rooms) {
+	public Door(List<Room> rooms) {
 		this.rooms = rooms;
 	}
 	
