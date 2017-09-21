@@ -14,6 +14,7 @@ public class Door {
 
 	public Door(Room room, String direction) {
 		this.room = room;
+		this.direction = direction;
 	}
 	
 }
