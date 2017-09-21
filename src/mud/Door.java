@@ -1,10 +1,10 @@
 package mud;
 
 public class Door {
-	List<Room> rooms;
+	Room rooms;
 
-	public Door(List<Room> rooms) {
-		this.rooms = rooms;
+	public Door(Room room) {
+		this.room = room;
 	}
 	
 }
