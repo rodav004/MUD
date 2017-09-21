@@ -9,6 +9,9 @@ public class GameObject {
 		this.description = description;
 	}
 	
+	/**
+	* Sets the name of this GameObject
+	*/
 	public void setName() {
 		
 	}
