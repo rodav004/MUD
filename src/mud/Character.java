@@ -11,14 +11,11 @@ public class Character extends GameObject {
 	}
 	
 	/** 
-	* Retrieve the Item objects in this Character's inventory.
-	* @return A list of Item objects this character holds.
+	* Retrieve the items objects in this Character's inventory.
+	* @return A list of the names in this character's inventory.
 	*/
-	public String getItems() {
-		List<Item> items = this.inventory;
-		for (Item item : items) {
-			return item.name;
-		}
+	public List<String> getItems() {
+		throw new UnsupportedOperationException()
 	}
 	
 	/**
