@@ -6,6 +6,7 @@ public class Character extends GameObject {
 	List<Item> inventory;
 	
 	public Character(String name, String description, Room location, List<Item> inventory) {
+		super(name, description);
 		this.location = location;
 		this.inventory = inventory;
 	}
