@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Game {
 	
-	public static void main(String args) {
+	public static void start() {
 		
 		Item torch = new Item("torch","This is a burning stick.");
 		Item apple = new Item("apple","A yummy red fruit.");
