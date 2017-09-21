@@ -6,8 +6,10 @@ public class Room extends GameObject {
 	Door[] doors;
 	
 	public Room(String name, String description, Item[] items, Character[] characters, Door[] doors) {
-		this.name = name;
-		this.description = description;
+		super(name, description);
+		this.items = items;
+		this.characters = characters;
+		this.doors = doors;
 	}
 
 }
