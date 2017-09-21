@@ -17,6 +17,11 @@ public class Character extends GameObject {
 		}
 	}
 	
+	/**
+	* Moves the character.
+	* @param direction The direction to move the player in, for example, "North".
+	* @return A String describing the result of the move, for example, "Can't move North!".
+	*/
 	public String move(String direction) {
 		return "hi";
 	}
