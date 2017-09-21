@@ -25,7 +25,7 @@ public class Character extends GameObject {
 	* @return A String describing the result of the move, for example, "Can't move North!".
 	*/
 	public String move(String direction) {
-		return "hi";
+		throw new UnsupportedOperationException();
 	}
 	
 	
