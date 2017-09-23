@@ -1,31 +1,48 @@
 package mud;
-import java.util.List;
+import java.util.ArrayList;
 
 public class Character extends GameObject {
 	Room location;
-	List<Item> inventory;
+	ArrayList<Item> inventory;
 	
-	public Character(String name, String description, Room location, List<Item> inventory) {
-		super(name, description);
+	public Character(String name, String description, Room location, ArrayList<Item> inventory) {
 		this.location = location;
 		this.inventory = inventory;
 	}
 	
-	/** 
-	* Retrieve the items objects in this Character's inventory.
-	* @return A list of the names in this character's inventory.
-	*/
-	public List<String> getItems() {
-		throw new UnsupportedOperationException();
+	public ArrayList<String> getItems() {
+		ArrayList<Item> items = this.inventory;
+		ArrayList<String> itemNames = new ArrayList<>();
+		for (Item item : items) {
+			itemNames.add(item.name);
+		}
+		return itemNames;
 	}
 	
-	/**
-	* Moves the character.
-	* @param direction The direction to move the player in, for example, "North".
-	* @return A String describing the result of the move, for example, "Can't move North!".
-	*/
+	//This isn't working right yet
 	public String move(String direction) {
-		throw new UnsupportedOperationException();
+		String newRoom = null;
+		
+		if (direction == "north" || direction == "up") {
+			Door exit = location.doors[0];
+			newRoom = "You are in the " + exit.room1.name + ". "+ exit.room1.description;
+		}
+		else if (direction == "south" || direction == "down") {
+			Door exit = location.doors[2];
+			newRoom = "You are in the " + exit.room2.name + ". "+ exit.room2.description;
+		}
+		else if (direction == "east" || direction == "right") {
+			Door exit = location.doors[1];
+			newRoom = "You are in the " + exit.room2.name + ". "+ exit.room2.description;
+		}
+		else if (direction == "west" || direction == "left") {
+			Door exit = location.doors[3];
+			newRoom = "You are in the " + exit.room1.name + ". "+ exit.room1.description;
+		}
+		else {
+			newRoom = "Sorry, that is not a valid direction!";
+		}
+		return newRoom;
 	}
 	
 	
