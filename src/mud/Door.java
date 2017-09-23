@@ -1,20 +1,11 @@
 package mud;
 
 public class Door {
-	
-	public String getDirection() {
-		return this.direction;
-	}
-	private final String direction;
-	
-	public Room getRoom() {
-		return this.room;
-	}
-	private final Room room;
+	Room room1;
+	Room room2;
 
-	public Door(Room room, String direction) {
-		this.room = room;
-		this.direction = direction;
-	}
-	
+	public Door(Room room1,Room room2) {
+		this.room1 = room1;
+		this.room2 = room2;
+	}	
 }
