@@ -12,16 +12,16 @@ public class GameObject {
 	/**
 	* Sets the name of this GameObject
 	*/
-	public void setName() {
-		
+	public void setName(String newName) {
+		this.name = newName;
 	}
 	
 	public String getName() {
 		return this.name;
 	}
 	
-	public void setDescription() {
-		
+	public void setDescription(String newDescription) {
+		this.description = newDescription;
 	}
 	
 	public String getDescription() {
