@@ -8,14 +8,15 @@ public class UserInterface {
 	public static void main(String[] args) {
 		
 		Game.start();
-		input = new Scanner(System.in);
+
 		String start = "Hello! Your name is Bob and you are in the Nice Room.";
 		System.out.println(start);
-		String direction = input.nextLine();
-		
+		input = new Scanner(System.in);
+		String direction = input.next();
+		direction = direction.toString();
 		String r = Game.person.move(direction);
 		System.out.println(r);
-	
+		System.out.println(direction);
 	}
 
 }
