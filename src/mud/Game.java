@@ -10,8 +10,8 @@ public class Game {
 		// Room 1
 		
 		// Room 1 items
-		Item torch = new Item("torch","This is a burning stick.");
-		Item apple = new Item("apple","A yummy red fruit.");
+		Item torch = Items.TORCH.make();
+		Item apple = Items.APPLE.make();
 		
 		//Room 1 attributes
 		ArrayList<Item> itemsRoom1 = new ArrayList<>();
@@ -30,8 +30,8 @@ public class Game {
 		//Room 2
 		
 		//Room 2 Items
-		Item rock = new Item("rock","It's grayish and hard.");
-		Item pen = new Item("pen","Useful for writing.");
+		Item rock = Items.ROCK.make();
+		Item pen = Items.PEN.make();
 		
 		//Room 2 attributes
 		ArrayList<Item> itemsRoom2 = new ArrayList<>();
