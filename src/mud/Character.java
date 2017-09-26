@@ -32,20 +32,20 @@ public class Character extends GameObject {
 			else {newRoom = "There is not a door in that direction!";
 			}
 		}
-		else if (direction == "south" || direction == "down") {
-			Door exit = location.doors[2];
-			if (exit != null) {
-				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room2.description;
-				this.location = exit.room1;
-			}
-			else {newRoom = "There is not a door in that direction!";
-			}
-		}
 		else if (direction == "east" || direction == "right") {
 			Door exit = location.doors[1];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room2.description;
 				this.location = exit.room2;
+			}
+			else {newRoom = "There is not a door in that direction!";
+			}
+		}
+		else if (direction == "south" || direction == "down") {
+			Door exit = location.doors[2];
+			if (exit != null) {
+				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room2.description;
+				this.location = exit.room1;
 			}
 			else {newRoom = "There is not a door in that direction!";
 			}
