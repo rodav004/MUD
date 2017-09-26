@@ -23,7 +23,7 @@ public class Character extends GameObject {
 	public String move(String direction) {
 		String newRoom = null;
 		
-		if (direction == "north" || direction == "up") {
+		if (direction.equals("north") || direction.equals("up")) {
 			Door exit = location.doors[0];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room2.name + ". "+ exit.room1.description;
@@ -32,16 +32,7 @@ public class Character extends GameObject {
 			else {newRoom = "There is not a door in that direction!";
 			}
 		}
-		else if (direction == "east" || direction == "right") {
-			Door exit = location.doors[1];
-			if (exit != null) {
-				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room2.description;
-				this.location = exit.room2;
-			}
-			else {newRoom = "There is not a door in that direction!";
-			}
-		}
-		else if (direction == "south" || direction == "down") {
+		else if (direction.equals("south") || direction.equals("down")) {
 			Door exit = location.doors[2];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room2.description;
@@ -50,7 +41,16 @@ public class Character extends GameObject {
 			else {newRoom = "There is not a door in that direction!";
 			}
 		}
-		else if (direction == "west" || direction == "left") {
+		else if (direction.equals("east") || direction.equals("right")) {
+			Door exit = location.doors[1];
+			if (exit != null) {
+				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room2.description;
+				this.location = exit.room2;
+			}
+			else {newRoom = "There is not a door in that direction!";
+			}
+		}
+		else if (direction.equals("west") || direction.equals("left")) {
 			Door exit = location.doors[3];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room2.description;
