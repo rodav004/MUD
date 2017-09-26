@@ -19,6 +19,7 @@ public class Character extends GameObject {
 		return itemNames;
 	}
 	
+	//add an item to a person's inventory
 	/*public String addItem(String item){
 		ArrayList<Item> roomItems = location.getItems();
 		for (Item roomItems: itemX) {
