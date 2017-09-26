@@ -20,14 +20,19 @@ public class Character extends GameObject {
 	}
 	
 	//add an item to a person's inventory
-	/*public String addItem(String item){
+	/*public String addItem(String item) {
+		Strint result = null;
 		ArrayList<Item> roomItems = location.getItems();
 		for (Item roomItems: itemX) {
 			if (itemX.equal(item))
 				inventory.add(item);
 				roomItems.remove(item);
+				result = "The item " + item " is now in your inventory. The description is " + item.getDescription();
+			else 
+				result = "The item is not in this room"
 		}
-	}*/
+		return result;
+	} */
 	
 	//This isn't working right yet
 	public String move(String direction) {
