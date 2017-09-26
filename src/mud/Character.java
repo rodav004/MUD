@@ -33,8 +33,8 @@ public class Character extends GameObject {
 		
 		Door exit = location.doors[theIndex];
 	        if (exit != null) {
-		     this.location = exit.room1;
-		     return "You are in the " + exit.room1.name + ". "+ exit.room1.description;
+		     this.location = exit.room;
+		     return "You are in the " + exit.room.name + ". "+ exit.room.description;
 		}
 		else {
 		     return "There is not a door in that direction!";
