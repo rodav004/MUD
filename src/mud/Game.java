@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class Game {
 	public static Character person;
+	public static Room room1;
 	
 	public static void start() {
 		
@@ -20,7 +21,7 @@ public class Game {
 		Door[] doorsRoom1 = {null,null,null,null};
 		
 		//Room 1 constructed
-		Room room1 = new Room("Nice room","This is a nice room.",itemsRoom1,peopleRoom1,doorsRoom1);
+		Room room1 = new Room("Nice Room","This is a nice room.",itemsRoom1,peopleRoom1,doorsRoom1);
 		
 		//Character Inventory
 		ArrayList<Item> inventory = new ArrayList<>();
@@ -45,7 +46,7 @@ public class Game {
 		Door[] doorsRoom2 = {null,null,null,null};
 		
 		//Room 2 constructed
-		Room room2 = new Room("Okay room","This room is okay.",itemsRoom2,peopleRoom2,doorsRoom2);
+		Room room2 = new Room("Okay Room","This room is okay.",itemsRoom2,peopleRoom2,doorsRoom2);
 		
 		//Construct a door
 		Door door1 = new Door(room1,room2);
