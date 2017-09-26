@@ -2,9 +2,9 @@ package mud;
 import java.util.ArrayList;
 
 public class Room extends GameObject {
-	ArrayList<Item> items;
-	ArrayList<Character> characters;
-	Door[] doors;
+	private ArrayList<Item> items;
+	private ArrayList<Character> characters;
+	private Door[] doors;
 	
 	public Room(String name, String description, ArrayList<Item> items, ArrayList<Character> characters,Door[] doors) {
 		super(name, description);
