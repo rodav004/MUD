@@ -6,8 +6,7 @@ public class Character extends GameObject {
 	ArrayList<Item> inventory;
 	
 	public Character(String name, String description, Room location, ArrayList<Item> inventory) {
-		this.description = description;
-		this.name = name;
+		super(name, description);
 		this.location = location;
 		this.inventory = inventory;
 	}
