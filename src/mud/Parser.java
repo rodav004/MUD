@@ -16,7 +16,7 @@ import java.util.function.Supplier;
  */
 public class Parser {
     
-    public static Optional<Command> parse(String input) {
+    public static Command parse(String input) {
 	 Command result;
 	 List<String> splitStrings = Arrays.asList(input.split(" "));
 	 
@@ -31,7 +31,7 @@ public class Parser {
 	     result = null;
 	 }
 	 
-	 return Optional.ofNullable(result);
+	 return result;
     }
 }
 
