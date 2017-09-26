@@ -5,6 +5,10 @@ public enum Direction {
   
 	public static final int count = Direction.values().length;
 
+	public int index() {
+		return this.ordinal();
+	}
+	
 	public static Direction resolve(String input) {
 		Direction result;
 		
