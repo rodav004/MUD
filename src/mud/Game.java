@@ -53,8 +53,8 @@ public class Game {
 		Door door2 = new Door(room1);
 		
 		//Assign doors to rooms
-		doorsRoom1[2] = door1;
-		doorsRoom2[0] = door2;
+		doorsRoom1[Direction.SOUTH.ordinal()] = door1;
+		doorsRoom2[Direction.NORTH.ordinal()] = door2;
 		
 		
 	}
