@@ -49,11 +49,12 @@ public class Game {
 		Room room2 = new Room("Okay Room","This room is okay.",itemsRoom2,peopleRoom2,doorsRoom2);
 		
 		//Construct a door
-		Door door1 = new Door(room1,room2);
+		Door door1 = new Door(room2);
+		Door door2 = new Door(room1);
 		
 		//Assign doors to rooms
 		doorsRoom1[2] = door1;
-		doorsRoom2[0] = door1;
+		doorsRoom2[0] = door2;
 		
 		
 	}
