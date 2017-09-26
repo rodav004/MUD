@@ -39,7 +39,6 @@ public class Character extends GameObject {
  +	} */
   	
 	
-	//This isn't working right yet
 	public String move(String direction) {
 		
 		Direction theDirection = Direction.resolve(direction);
