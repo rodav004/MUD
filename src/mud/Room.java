@@ -20,4 +20,15 @@ public class Room extends GameObject {
 	public Door getDoor(Direction doorDirection) {
 		return doors[doorDirection.ordinal()];
 	}
+	
+	public void addCharacters(Character ...theCharacters) {
+		for (Character theCharacter : theCharacters) {
+			characters.add(theCharacter);
+		}
+	}
+	public void removeCharacter(Character ...theCharacters) {
+		for (Character theCharacter : theCharacters) {
+			characters.remove(theCharacter);
+		}
+	}
 }
