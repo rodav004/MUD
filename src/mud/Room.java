@@ -17,7 +17,7 @@ public class Room extends GameObject {
 	public void setDoor(Door door, Direction doorDirection) {
 		doors[doorDirection.ordinal()] = door;
 	}
-	public void getDoor(Direction doorDirection) {
+	public Door getDoor(Direction doorDirection) {
 		return doors[doorDirection.ordinal()];
 	}
 }
