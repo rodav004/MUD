@@ -48,7 +48,9 @@ public class Character extends GameObject {
 		
 		Door exit = location.getDoor(theDirection);
 	        if (exit != null) {
+		     this.location.removeCharacters(this);
 		     this.location = exit.room;
+		     this.location.addCharacters(this);
 		     return "You are in the " + exit.room.name + ". "+ exit.room.description;
 		}
 		else {
