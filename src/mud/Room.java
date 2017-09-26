@@ -4,6 +4,11 @@ import java.util.ArrayList;
 public class Room extends GameObject {
 	ArrayList<Item> items;
 	ArrayList<Character> characters;
+	
+	/*
+	* For example, to set the northern door, 
+	* write "doors[Direction.NORTH.ordinal()] = someDoor;"
+	*/
 	Door[] doors;
 	
 	public Room(String name, String description, ArrayList<Item> items, ArrayList<Character> characters,Door[] doors) {
