@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tres_caballeros.mud;
+package mud;
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,3 +36,22 @@ public class Parser {
 }
 
 class ParserFailureException extends Exception {}
+
+/**
+ * Provides static methods for performing various operations in an Optional-friendly manner
+ * @author michaelsavich
+ */
+class Safely {
+    public static <T> Optional<T> get(List<T> list, int index) {
+	 T result;
+	 try {
+	     result = list.get(index);
+	 }
+	 catch (IndexOutOfBoundsException ex) {
+	     result = null;
+	 }
+	 
+	 return Optional.ofNullable(result);
+    }
+}
+
