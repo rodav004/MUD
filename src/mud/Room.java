@@ -13,4 +13,8 @@ public class Room extends GameObject {
 		this.characters = characters;
 		this.doors = doors;
 	}
+	
+	public void setDoor(Door door, Direction doorDirection) {
+		doors[doorDirection.ordinal()] = door;
+	}
 }
