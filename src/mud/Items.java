@@ -9,5 +9,6 @@ public enum Items {
         case APPLE: return new Item("apple","A yummy red fruit.");    
         case ROCK:  return new Item("rock","It's grayish and hard.");
         case PEN:   return new Item("pen","Useful for writing.");
+        }
     }
 }
