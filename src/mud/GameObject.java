@@ -13,6 +13,7 @@ public class GameObject {
 	* Sets the name of this GameObject
 	*/
 	public void setName(String newName) {
+		assert newName != null;
 		this.name = newName;
 	}
 	
@@ -21,6 +22,7 @@ public class GameObject {
 	}
 	
 	public void setDescription(String newDescription) {
+		assert newDescription != null;
 		this.description = newDescription;
 	}
 	
