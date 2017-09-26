@@ -45,9 +45,8 @@ public class Character extends GameObject {
 		if (theDirection == null) {
 		     return "Sorry, that is not a valid direction!"; 
 		}
-		int theIndex = Constant.indexForDirection(theDirection);
 		
-		Door exit = location.doors[theIndex];
+		Door exit = location.doors[theDirection.ordinal()];
 	        if (exit != null) {
 		     this.location = exit.room;
 		     return "You are in the " + exit.room.name + ". "+ exit.room.description;
