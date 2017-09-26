@@ -23,6 +23,9 @@ public class Room extends GameObject {
 	
 	public void addCharacters(Character ...theCharacters) {
 		for (Character theCharacter : theCharacters) {
+			if (characters.contains(theCharacter)) {
+				throw new AssertionError("Tried to add a character to a room a second time!");
+			}
 			characters.add(theCharacter);
 		}
 	}
