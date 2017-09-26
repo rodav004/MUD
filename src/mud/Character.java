@@ -6,6 +6,8 @@ public class Character extends GameObject {
 	ArrayList<Item> inventory;
 	
 	public Character(String name, String description, Room location, ArrayList<Item> inventory) {
+		this.description = description;
+		this.name = name;
 		this.location = location;
 		this.inventory = inventory;
 	}
@@ -24,7 +26,7 @@ public class Character extends GameObject {
 		String newRoom = null;
 		
 		if (direction.equals("north") || direction.equals("up")) {
-			Door exit = location.doors[Constant.northIndex];
+			Door exit = location.doors[0];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room1.description;
 				this.location = exit.room1;
@@ -33,7 +35,7 @@ public class Character extends GameObject {
 			}
 		}
 		else if (direction.equals("south") || direction.equals("down")) {
-			Door exit = location.doors[Constant.southIndex];
+			Door exit = location.doors[2];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room2.name + ". "+ exit.room2.description;
 				this.location = exit.room2;
@@ -42,7 +44,7 @@ public class Character extends GameObject {
 			}
 		}
 		else if (direction.equals("east") || direction.equals("right")) {
-			Door exit = location.doors[Constant.eastIndex];
+			Door exit = location.doors[1];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room2.name + ". "+ exit.room2.description;
 				this.location = exit.room2;
@@ -51,7 +53,7 @@ public class Character extends GameObject {
 			}
 		}
 		else if (direction.equals("west") || direction.equals("left")) {
-			Door exit = location.doors[Constant.westIndex];
+			Door exit = location.doors[3];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room1.description;
 				this.location = exit.room1;
