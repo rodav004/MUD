@@ -10,5 +10,6 @@ public enum Items {
         case ROCK:  return new Item("rock","It's grayish and hard.");
         case PEN:   return new Item("pen","Useful for writing.");
         }
+        throw new AssertionError("Could not create an Item for " + this.name() + "!"); 
     }
 }
