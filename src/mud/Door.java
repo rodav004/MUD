@@ -1,7 +1,7 @@
 package mud;
 
 public class Door {
-	Room room;
+	private Room room;
 
 	public Door(Room room) {
 		this.room = room;
