@@ -5,6 +5,7 @@ public enum Direction {
   
 	public static Direction resolve(String input) {
 		Direction result;
+		
 		switch (input.toLowerCase()) {
 		case "up":
 		case "north":
