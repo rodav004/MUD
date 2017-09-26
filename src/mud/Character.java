@@ -24,7 +24,7 @@ public class Character extends GameObject {
 		String newRoom = null;
 		
 		if (direction.equals("north") || direction.equals("up")) {
-			Door exit = location.doors[0];
+			Door exit = location.doors[Constant.northIndex];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room1.description;
 				this.location = exit.room1;
@@ -33,7 +33,7 @@ public class Character extends GameObject {
 			}
 		}
 		else if (direction.equals("south") || direction.equals("down")) {
-			Door exit = location.doors[2];
+			Door exit = location.doors[Constant.southIndex];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room2.name + ". "+ exit.room2.description;
 				this.location = exit.room2;
@@ -42,7 +42,7 @@ public class Character extends GameObject {
 			}
 		}
 		else if (direction.equals("east") || direction.equals("right")) {
-			Door exit = location.doors[1];
+			Door exit = location.doors[Constant.eastIndex];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room2.name + ". "+ exit.room2.description;
 				this.location = exit.room2;
@@ -51,7 +51,7 @@ public class Character extends GameObject {
 			}
 		}
 		else if (direction.equals("west") || direction.equals("left")) {
-			Door exit = location.doors[3];
+			Door exit = location.doors[Constant.westIndex];
 			if (exit != null) {
 				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room1.description;
 				this.location = exit.room1;
