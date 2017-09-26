@@ -21,10 +21,10 @@ public class Room extends GameObject {
 	}
 	
 	public void setDoor(Door door, Direction doorDirection) {
-		doors[doorDirection.ordinal()] = door;
+		doors[doorDirection.index()] = door;
 	}
 	public Door getDoor(Direction doorDirection) {
-		return doors[doorDirection.ordinal()];
+		return doors[doorDirection.index()];
 	}
 	
 	public void addCharacters(Character ...theCharacters) {
