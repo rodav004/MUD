@@ -26,7 +26,7 @@ public class Character extends GameObject {
 		if (direction.equals("north") || direction.equals("up")) {
 			Door exit = location.doors[0];
 			if (exit != null) {
-				newRoom = "You are in the " + exit.room2.name + ". "+ exit.room1.description;
+				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room1.description;
 				this.location = exit.room1;
 			}
 			else {newRoom = "There is not a door in that direction!";
@@ -35,8 +35,8 @@ public class Character extends GameObject {
 		else if (direction.equals("south") || direction.equals("down")) {
 			Door exit = location.doors[2];
 			if (exit != null) {
-				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room2.description;
-				this.location = exit.room1;
+				newRoom = "You are in the " + exit.room2.name + ". "+ exit.room2.description;
+				this.location = exit.room2;
 			}
 			else {newRoom = "There is not a door in that direction!";
 			}
@@ -44,7 +44,7 @@ public class Character extends GameObject {
 		else if (direction.equals("east") || direction.equals("right")) {
 			Door exit = location.doors[1];
 			if (exit != null) {
-				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room2.description;
+				newRoom = "You are in the " + exit.room2.name + ". "+ exit.room2.description;
 				this.location = exit.room2;
 			}
 			else {newRoom = "There is not a door in that direction!";
@@ -53,7 +53,7 @@ public class Character extends GameObject {
 		else if (direction.equals("west") || direction.equals("left")) {
 			Door exit = location.doors[3];
 			if (exit != null) {
-				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room2.description;
+				newRoom = "You are in the " + exit.room1.name + ". "+ exit.room1.description;
 				this.location = exit.room1;
 			}
 			else {newRoom = "There is not a door in that direction!";
