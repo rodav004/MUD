@@ -16,7 +16,6 @@ public class UserInterface {
 		direction = direction.toString();
 		String r = Game.person.move(direction);
 		System.out.println(r);
-		System.out.println(direction);
 	}
 
 }
