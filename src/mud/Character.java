@@ -41,7 +41,6 @@ public class Character extends GameObject {
 	
 	//This isn't working right yet
 	public String move(String direction) {
-		String newRoom = null;
 		
 		Direction theDirection = Direction.resolve(direction);
 		if (theDirection == null) {
