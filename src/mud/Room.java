@@ -1,12 +1,13 @@
 package mud;
+import java.util.List;
 import java.util.ArrayList;
 
 public class Room extends GameObject {
-	private ArrayList<Item> items;
-	private ArrayList<Character> characters;
+	private List<Item> items;
+	private List<Character> characters;
 	private Door[] doors;
 	
-	public Room(String name, String description, ArrayList<Item> items, ArrayList<Character> characters,Door[] doors) {
+	public Room(String name, String description, List<Item> items, List<Character> characters,Door[] doors) {
 		super(name, description);
 		this.items = items != null ? items : new ArrayList<>();
 		this.characters = characters != null ? characters : new ArrayList<>();
