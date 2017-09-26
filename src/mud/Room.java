@@ -7,8 +7,7 @@ public class Room extends GameObject {
 	Door[] doors;
 	
 	public Room(String name, String description, ArrayList<Item> items, ArrayList<Character> characters,Door[] doors) {
-		this.name = name;
-		this.description = description;
+		super(name, description);
 		this.items = items != null ? items : new ArrayList<>();
 		this.characters = characters != null ? characters : new ArrayList<>();
 		if (doors != null) {
