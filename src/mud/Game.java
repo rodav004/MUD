@@ -2,10 +2,7 @@ package mud;
 import java.util.ArrayList;
 
 public class Game {
-	public static Character person;
-	public static Room room1;
-	
-	public static void start() {
+	public void start() {
 		
 		// Room 1
 		
