@@ -3,6 +3,8 @@ package mud;
 public enum Direction {
   	NORTH, SOUTH, EAST, WEST;
   
+	public static final int count = Direction.values().length;
+
 	public static Direction resolve(String input) {
 		Direction result;
 		
