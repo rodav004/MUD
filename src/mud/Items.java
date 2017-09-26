@@ -12,4 +12,5 @@ public enum Items {
         }
         throw new AssertionError("Could not create an Item for " + this.name() + "!"); 
     }
+    
 }
