@@ -16,21 +16,16 @@ public class Game {
 		//Room 1 attributes
 		ArrayList<Item> itemsRoom1 = new ArrayList<>();
 			itemsRoom1.add(apple);
-			itemsRoom1.add(torch);
-		ArrayList<Character> peopleRoom1 = new ArrayList<>();
-		Door[] doorsRoom1 = {null,null,null,null};
+			itemsRoom1.add(torch);	
 		
 		//Room 1 constructed
-		Room room1 = new Room("Nice Room","This is a nice room.",itemsRoom1,peopleRoom1,doorsRoom1);
-		
-		//Character Inventory
-		ArrayList<Item> inventory = new ArrayList<>();
+		Room room1 = new Room("Nice Room","This is a nice room.",itemsRoom1,null,null);
 		
 		//Character constructed
-		person = new Character("Bob","Bob has brown hair.",room1,inventory);
+		Character bob = new Character("Bob","Bob has brown hair.",room1,new ArrayList<Item>());
 		
 		//Character put in room
-		peopleRoom1.add(person);
+		room1.addCharacters(bob);
 		
 		//Room 2
 		
@@ -42,19 +37,13 @@ public class Game {
 		ArrayList<Item> itemsRoom2 = new ArrayList<>();
 			itemsRoom2.add(rock);
 			itemsRoom2.add(pen);
-		ArrayList<Character> peopleRoom2 = new ArrayList<>();
-		Door[] doorsRoom2 = {null,null,null,null};
 		
 		//Room 2 constructed
-		Room room2 = new Room("Okay Room","This room is okay.",itemsRoom2,peopleRoom2,doorsRoom2);
-		
-		//Construct a door
-		Door door1 = new Door(room2);
-		Door door2 = new Door(room1);
-		
+		Room room2 = new Room("Okay Room","This room is okay.",itemsRoom2,null,null);
+				
 		//Assign doors to rooms
-		room1.setDoor(door1, Direction.SOUTH);
-		room2.setDoor(door2, Direction.NORTH);
+		room1.setDoor(new Door(room2), Direction.SOUTH);
+		room2.setDoor(new Door(room1), Direction.NORTH);
 		
 	}
 }
