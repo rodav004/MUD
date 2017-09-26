@@ -9,9 +9,15 @@ public class Room extends GameObject {
 	public Room(String name, String description, ArrayList<Item> items, ArrayList<Character> characters,Door[] doors) {
 		this.name = name;
 		this.description = description;
-		this.items = items;
-		this.characters = characters;
-		this.doors = doors;
+		this.items = items != null ? items : new ArrayList<>();
+		this.characters = characters != null ? characters : new ArrayList<>();
+		if (doors != null) {
+			assert doors.length == Direction.count : "Creating Room with array of wrong size!!";
+			this.doors = doors;
+		}
+		else {
+			this.doors = new Door[Direction.count];
+		}
 	}
 	
 	public void setDoor(Door door, Direction doorDirection) {
