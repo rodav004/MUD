@@ -52,8 +52,8 @@ public abstract class Character extends GameObject {
  			else 
  				result = "That item is not in this room."
   		}
+		return result;
  	}
- 		return result;
  	*/
   	
 	//this IS working! hooray!
