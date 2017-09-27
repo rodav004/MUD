@@ -83,14 +83,12 @@ public abstract class Character extends GameObject {
 		}
 		
 		Door exit = location.getDoor(theDirection);
-		
-		return exit != null ? moveTo(exit.room) : "There is not a door in that direction!";
+		if (exit != null) {
+			setLocation(exit.room);
+			return "You are in the " + location.getName() + ". "+ location.getDescription();
+		}
+		else {
+			return "There is not a door in that direction!";
+		}
 	}
-
-	public String moveTo(Room theRoom) {
-		assert theRoom != null;
-		setLocation(theRoom);
-		return "You are in the " + theRoom.getName() + ". "+ theRoom.getDescription();
-	}	
-
 }
