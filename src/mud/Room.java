@@ -20,6 +20,10 @@ public class Room extends GameObject {
 		}
 	}
 	
+	public Room(String name, String description, Items[] items, List<Character> characters,Door[] doors) {
+		this(name,description,Items.make(items),characters,doors);
+	}
+	
 	public void setDoor(Door door, Direction doorDirection) {
 		doors[doorDirection.index()] = door;
 	}
