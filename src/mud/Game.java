@@ -12,11 +12,9 @@ public class Game {
 		//Room 1 constructed
 		Room room1 = new Room("Nice Room","This is a nice room.",itemsRoom1,null,null);
 		
-		//Character constructed
-		Mob bob = new Mob("Bob","Bob has brown hair.");
-		Mob kaz = new Mob("Kaz","Neo Yokio's most eligible bachelor…");
-		//Character put in room
-		room1.populate(bob,kaz);
+		//Player constructed
+		
+		//Player put in room
 		
 		//Room 2
 		
