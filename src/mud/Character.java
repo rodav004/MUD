@@ -46,7 +46,7 @@ public class Character extends GameObject {
   	
 	//this IS working! hooray!
 	public String move(String direction) {
-		assert location != null : "Character isn't in a room yet!"
+		assert location != null : "Character isn't in a room yet!";
 	
 		Direction theDirection = Direction.resolve(direction);
 		if (theDirection == null) {
