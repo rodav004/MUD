@@ -39,23 +39,23 @@ public class Character extends GameObject {
   	
 	//this IS working! hooray!
 	public String move(String direction) {
-		
+	
 		Direction theDirection = Direction.resolve(direction);
 		if (theDirection == null) {
 		     return "Sorry, that is not a valid direction!"; 
 		}
 		
 		Door exit = location.getDoor(theDirection);
-	        if (exit != null) {
-		     this.location.removeCharacters(this);
-		     this.location = exit.room;
-		     this.location.addCharacters(this);
-		     return "You are in the " + exit.room.name + ". "+ exit.room.description;
-		}
-		else {
-		     return "There is not a door in that direction!";
-		}
+		
+		return exit != null ? moveTo(exit.room) : "There is not a door in that direction!";
 	}
-	
-	
+
+	public String moveTo(Room theRoom) {
+		assert theRoom != null;
+		this.location.removeCharacters(this);
+		this.location = theRoom;
+		this.location.addCharacters(this);
+		return "You are in the " + theRoom.name + ". "+ theRoom.description;
+	}	
+
 }
