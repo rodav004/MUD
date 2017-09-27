@@ -7,13 +7,7 @@ public class Game {
 		// Room 1
 		
 		// Room 1 items
-		Item torch = Items.TORCH.make();
-		Item apple = Items.APPLE.make();
-		
-		//Room 1 attributes
-		ArrayList<Item> itemsRoom1 = new ArrayList<>();
-			itemsRoom1.add(apple);
-			itemsRoom1.add(torch);	
+		Items[] itemsRoom1 = { Items.TORCH, Items.APPLE };
 		
 		//Room 1 constructed
 		Room room1 = new Room("Nice Room","This is a nice room.",itemsRoom1,null,null);
@@ -27,13 +21,7 @@ public class Game {
 		//Room 2
 		
 		//Room 2 Items
-		Item rock = Items.ROCK.make();
-		Item pen = Items.PEN.make();
-		
-		//Room 2 attributes
-		ArrayList<Item> itemsRoom2 = new ArrayList<>();
-			itemsRoom2.add(rock);
-			itemsRoom2.add(pen);
+		Items[] itemsRoom2 = { Items.ROCK, Items.PEN };
 		
 		//Room 2 constructed
 		Room room2 = new Room("Okay Room","This room is okay.",itemsRoom2,null,null);
