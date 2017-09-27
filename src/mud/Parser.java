@@ -15,11 +15,16 @@ public class Parser {
 	 Command result;
 	 List<String> splitStrings = Arrays.asList(input.split(" "));
 	 
-	 Supplier<ParserFailureException> fail = () -> new ParserFailureException();
 	 try {
-	     String first  = Safely.get(splitStrings, 0).orElseThrow(fail);
-	     Action action = Action.resolve(first).orElseThrow(fail);
-	     String target = Safely.get(splitStrings, 1).orElseThrow(fail);
+	     if (splitStrings.size() < 2) {
+		throw new ParserFailureException();
+	     }
+	     String first  = splitStrings.get(0);
+	     Action action = Action.resolve(first);
+	     if (action == null) {
+		throw new ParserFailureException();
+	     }
+	     String target = splitStrings.get(1);
 	     result = new Command(action, target);
 	 }
 	 catch (ParserFailureException e) {
@@ -31,22 +36,3 @@ public class Parser {
 }
 
 class ParserFailureException extends Exception {}
-
-/**
- * Provides static methods for performing various operations in an Optional-friendly manner
- * @author michaelsavich
- */
-class Safely {
-    public static <T> Optional<T> get(List<T> list, int index) {
-	 T result;
-	 try {
-	     result = list.get(index);
-	 }
-	 catch (IndexOutOfBoundsException ex) {
-	     result = null;
-	 }
-	 
-	 return Optional.ofNullable(result);
-    }
-}
-

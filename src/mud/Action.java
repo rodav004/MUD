@@ -12,7 +12,7 @@ public enum Action {
     TAKE,
     ATTACK;
     
-    public static Optional<Action> resolve(String str) {
+    public static Action resolve(String str) {
 	 Action result;
 	 switch (str.toUpperCase(Locale.ROOT)) {
 	     case "MOVE":
@@ -28,8 +28,7 @@ public enum Action {
 		  result = null;
 		  break;
 	 }
-	 
-	 return Optional.ofNullable(result);
+	return result;	 
     }
 }
 
