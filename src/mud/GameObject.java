@@ -1,8 +1,8 @@
 package mud;
 
 public abstract class GameObject {
-	String name;
-	String description;
+	private String name;
+	private String description;
 	
 	public GameObject(String name, String description) {
 		this.name = name;

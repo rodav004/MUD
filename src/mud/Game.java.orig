@@ -1,0 +1,38 @@
+package mud;
+import java.util.ArrayList;
+
+public class Game {
+	public void start() {
+		
+		// Room 1
+		
+		// Room 1 items
+		Items[] itemsRoom1 = { Items.TORCH, Items.APPLE };
+		
+		//Room 1 constructed
+		Room room1 = new Room("Nice Room","This is a nice room.",itemsRoom1,null,null);
+		
+<<<<<<< HEAD
+		//Character constructed
+		Mob bob = new Mob("Bob","Bob has brown hair.", room1);
+		Mob kaz = new Mob("Kaz","Neo Yokio's most eligible bachelor…",room1);
+=======
+		//Player constructed
+		
+		//Player put in room
+>>>>>>> 5fe4865ae9c23a5b335bc23d998a26d24ea0e9d4
+		
+		//Room 2
+		
+		//Room 2 Items
+		Items[] itemsRoom2 = { Items.ROCK, Items.PEN };
+		
+		//Room 2 constructed
+		Room room2 = new Room("Okay Room","This room is okay.",itemsRoom2,null,null);
+				
+		//Assign doors to rooms
+		room1.setDoor(new Door(room2), Direction.SOUTH);
+		room2.setDoor(new Door(room1), Direction.NORTH);
+		
+	}
+}
