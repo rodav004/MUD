@@ -16,7 +16,7 @@ public class Game {
 		Character bob = new Character("Bob","Bob has brown hair.");
 		
 		//Character put in room
-		bob.moveTo(room1);
+		room1.populate(bob);
 		
 		//Room 2
 		
