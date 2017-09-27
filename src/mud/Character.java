@@ -2,7 +2,7 @@ package mud;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Character extends GameObject {
+public abstract class Character extends GameObject {
         public Room getLocation() {
 		return this.location;
 	}
