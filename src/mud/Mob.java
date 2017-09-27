@@ -1,5 +1,5 @@
 package mud;
 
-public class MOB {
+public class Mob {
 
 }
