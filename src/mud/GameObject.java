@@ -1,6 +1,6 @@
 package mud;
 
-public class GameObject {
+public abstract class GameObject {
 	String name;
 	String description;
 	
