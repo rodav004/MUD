@@ -39,7 +39,7 @@ public class Room extends GameObject {
 			characters.add(theCharacter);
 		}
 	}
-	public void removeCharacter(Character ...theCharacters) {
+	public void removeCharacters(Character ...theCharacters) {
 		for (Character theCharacter : theCharacters) {
 			characters.remove(theCharacter);
 		}
