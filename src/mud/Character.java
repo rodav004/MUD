@@ -41,7 +41,7 @@ public class Character extends GameObject {
  +			else 
  +				result = "That item is not in this room."
   		}
- -	}*/
+ -	}
  +		return result;
  +	} */
   	
