@@ -22,7 +22,13 @@ public enum Items {
         }
         throw new AssertionError("Could not create an Item for " + this.name() + "!"); 
     }
-    
+
+    /**
+    * A convenience method for making Item objects
+    * for each Items value in an Array.
+    * @params theItems An array of Items values that you want made.
+    * @return A list of Item objects corresponding to the input.
+    */   
     public static List<Item> make(Items[] theItems) {
         List<Item> result = new ArrayList<>();
         for (Items theItem : theItems) {
