@@ -13,10 +13,10 @@ public class Game {
 		Room room1 = new Room("Nice Room","This is a nice room.",itemsRoom1,null,null);
 		
 		//Character constructed
-		Character bob = new Character("Bob","Bob has brown hair.",room1);
+		Character bob = new Character("Bob","Bob has brown hair.");
 		
 		//Character put in room
-		room1.addCharacters(bob);
+		bob.moveTo(room1);
 		
 		//Room 2
 		
