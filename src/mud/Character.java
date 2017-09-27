@@ -38,14 +38,15 @@ public abstract class Character extends GameObject {
 	}
 	
 	//add an item to a person's inventory
- 	/*public String addItem(String item.name) {
+ 	/*public String addItem(String item) {
+		String name = item.name;
  		String result = null;
   		ArrayList<Item> roomItems = location.getItems();
   		for (Item roomItems: itemX) {
-  			if (itemX.equal(item))
+  			if (itemX.equals(item))
   				inventory.add(item);
   				roomItems.remove(item);
- 				result = "The item " + item.name + " is now in your inventory. The description is " + item.getDescription();
+ 				result = "The item " + name + " is now in your inventory. The description is " + item.getDescription();
  			else 
  				result = "That item is not in this room."
   		}
