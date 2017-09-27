@@ -3,6 +3,13 @@ package mud;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+* An enum for mass-producing item objects.
+* To make a new Item, first define add its name to the 
+* enum. Then, in the make() method, where it says switch(this),
+* Add a case for the enum value you added. In that case, return the Item
+* you want the enum value to represent/create.
+*/
 public enum Items {
     TORCH, APPLE, ROCK, PEN;
     
