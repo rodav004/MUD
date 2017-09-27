@@ -14,6 +14,9 @@ public class Character extends GameObject {
 	public Character(String name, String description, Room location) {
 		this(name, description, location, new ArrayList<Item>());
 	}
+	public Character(String name, String description) {
+		this(name,description,null);
+	}
 	
 	
 	public ArrayList<String> getItems() {
