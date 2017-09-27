@@ -13,7 +13,7 @@ public class Game {
 		Room room1 = new Room("Nice Room","This is a nice room.",itemsRoom1,null,null);
 		
 		//Character constructed
-		Character bob = new Character("Bob","Bob has brown hair.",room1,new ArrayList<Item>());
+		Character bob = new Character("Bob","Bob has brown hair.",room1);
 		
 		//Character put in room
 		room1.addCharacters(bob);
