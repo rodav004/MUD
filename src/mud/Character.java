@@ -38,7 +38,7 @@ public abstract class Character extends GameObject {
 	}
 	
 	//add an item to a person's inventory
- 	/*public String addItem(String item) {
+ 	/*public String addItem(String item.name) {
  		String result = null;
   		ArrayList<Item> roomItems = location.getItems();
   		for (Item roomItems: itemX) {
