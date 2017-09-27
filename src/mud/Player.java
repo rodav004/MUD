@@ -8,8 +8,5 @@ public class Player extends Character {
         public Player(String name, String description, Room location) {
                 super(name, description, location, new ArrayList<Item>());
         }
-        public Player(String name, String description) {
-                super(name,description,null);
-        }
 
 }

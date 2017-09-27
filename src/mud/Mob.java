@@ -8,7 +8,4 @@ public class Mob extends Character {
 	public Mob(String name, String description, Room location) {
 		super(name, description, location, new ArrayList<Item>());
 	}
-	public Mob(String name, String description) {
-		super(name,description,null);
-	}	
 }
