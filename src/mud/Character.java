@@ -57,7 +57,9 @@ public class Character extends GameObject {
 
 	public String moveTo(Room theRoom) {
 		assert theRoom != null;
-		location.removeCharacters(this);
+		if (location != null) {
+			location.removeCharacters(this);
+		}
 		location = theRoom;
 		location.addCharacters(this);
 		return "You are in the " + theRoom.name + ". "+ theRoom.description;
