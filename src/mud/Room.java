@@ -35,12 +35,6 @@ public class Room extends GameObject {
 		return this.characters.contains(theCharacter);
 	}
 	
-	public void populate(Character ...theCharacters) {
-		for (Character theCharacter : theCharacters) {
-			theCharacter.moveTo(this);
-		}
-	}	
-	
 	public void addCharacters(Character ...theCharacters) {
 		for (Character theCharacter : theCharacters) {
 			assert theCharacter.getLocation() == null : "Can't add character currently in a room!";

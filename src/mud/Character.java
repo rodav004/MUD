@@ -6,7 +6,7 @@ public abstract class Character extends GameObject {
         public Room getLocation() {
 		return this.location;
 	}
-	private void setLocation(Room theRoom) {
+	public void setLocation(Room theRoom) {
 		assert theRoom != null;
                 if (location != null) {
 			Room lastLocation = location;
@@ -22,7 +22,7 @@ public abstract class Character extends GameObject {
 	
 	public Character(String name, String description, Room location, List<Item> inventory) {
 		super(name, description);
-		this.location = location;
+		setLocation(location);	
 		this.inventory = inventory;
 	}
 	public Character(String name, String description, Room location) {
@@ -64,14 +64,15 @@ public abstract class Character extends GameObject {
 		}
 		
 		Door exit = location.getDoor(theDirection);
-		
-		return exit != null ? moveTo(exit.room) : "There is not a door in that direction!";
+		if (exit != null) {
+			setLocation(exit.room);
+			return "You are in the " + exit.room.getName() + ". "+ exit.room.getName();
+		}
+		else {
+			return "There is not a door in that direction";
+		}
+
 	}
 
-	public String moveTo(Room theRoom) {
-		assert theRoom != null;
-		setLocation(theRoom);
-		return "You are in the " + theRoom.name + ". "+ theRoom.description;
-	}	
 
 }
