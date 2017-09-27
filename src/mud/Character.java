@@ -19,10 +19,9 @@ public class Character extends GameObject {
 	}
 	
 	
-	public ArrayList<String> getItems() {
-		ArrayList<Item> items = this.inventory;
-		ArrayList<String> itemNames = new ArrayList<>();
-		for (Item item : items) {
+	public List<String> getItems() {
+		List<String> itemNames = new ArrayList<>();
+		for (Item item : this.inventory) {
 			itemNames.add(item.name);
 		}
 		return itemNames;
