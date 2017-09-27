@@ -16,6 +16,14 @@ public class UserInterface {
 // 		direction = direction.toString();
 // 		String r = Game.person.move(direction);
 // 		System.out.println(r);
+		
+		//creating a new charcater hopefully
+		input = new Scanner(System.in);
+		System.out.println("What is your name?");
+		String name = input.next();
+		Player playerOne = new Player(name, "You have no description yet.", room1, <Item> inventory);
+		System.out.println("Hello " + name + "! You are in " + room1.getName()); 
+		
 	}
 
 }
