@@ -54,7 +54,7 @@ public abstract class Character extends GameObject {
   		}
  	}
  		return result;
- 	} */
+ 	*/
   	
 	//this IS working! hooray!
 	public String move(String direction) {
