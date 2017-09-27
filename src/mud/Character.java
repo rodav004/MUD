@@ -3,6 +3,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Character extends GameObject {
+        public Room getLocation() {
+		return this.location;
+	}
+	private void setLocation(Room theRoom) {
+		assert theRoom != null;
+		assert location != null; 
+                
+		Room lastLocation = location;
+		location = null;
+		
+		lastLocation.removeCharacters(this);
+                theRoom.addCharacters(this);
+		location = theRoom;
+	}
 	private Room location;
 	private List<Item> inventory;
 	
@@ -16,8 +30,7 @@ public class Character extends GameObject {
 	}
 	public Character(String name, String description) {
 		this(name,description,null);
-	}
-	
+	}	
 	
 	public List<String> getItems() {
 		List<String> itemNames = new ArrayList<>();
@@ -60,11 +73,7 @@ public class Character extends GameObject {
 
 	public String moveTo(Room theRoom) {
 		assert theRoom != null;
-		if (location != null) {
-			location.removeCharacters(this);
-		}
-		location = theRoom;
-		location.addCharacters(this);
+		setLocation(theRoom);
 		return "You are in the " + theRoom.name + ". "+ theRoom.description;
 	}	
 

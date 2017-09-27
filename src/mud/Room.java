@@ -30,24 +30,26 @@ public class Room extends GameObject {
 	public Door getDoor(Direction doorDirection) {
 		return doors[doorDirection.index()];
 	}
+
+	public boolean containsCharacter(Character theCharacter) {
+		return this.characters.contains(theCharacter);
+	}
 	
 	public void populate(Character ...theCharacters) {
 		for (Character theCharacter : theCharacters) {
 			theCharacter.moveTo(this);
 		}
-	}
+	}	
 	
-	//Ideally, only Character.moveTo() should call Room.addCharacters() and Room.removeCharacters().
 	public void addCharacters(Character ...theCharacters) {
 		for (Character theCharacter : theCharacters) {
-			if (characters.contains(theCharacter)) {
-				throw new AssertionError("Tried to add a character to a room a second time!");
-			}
+			assert theCharacter.getLocation() == null : "Can't add character currently in a room!";
 			characters.add(theCharacter);
 		}
 	}
 	public void removeCharacters(Character ...theCharacters) {
 		for (Character theCharacter : theCharacters) {
+			assert theCharacter.getLocation() == null : "Can't remove character currently in a room!";
 			characters.remove(theCharacter);
 		}
 	}
