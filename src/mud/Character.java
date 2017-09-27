@@ -55,6 +55,22 @@ public abstract class Character extends GameObject {
   		}
 		return result;
  	}
+	
+	//remove an item from a person's inventory
+	public String removeItem(<Item> item){
+		String name = item.getName();
+		String result = null;
+		List<Item> inventoryItems = inventory.getItems();
+		for (Item inventoryItems: itemX) {
+			if (itemX.equals(name))
+				roomItems.add(item);
+				inventory.remove(item);
+				result = "The item " + name + " is now in the room " + location + ".";
+			else
+				result = "That item is not in your inventory."
+		}
+		return result;
+	}
  	*/
   	
 	//this IS working! hooray!
