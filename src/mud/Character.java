@@ -1,11 +1,12 @@
 package mud;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Character extends GameObject {
 	private Room location;
-	private ArrayList<Item> inventory;
+	private List<Item> inventory;
 	
-	public Character(String name, String description, Room location, ArrayList<Item> inventory) {
+	public Character(String name, String description, Room location, List<Item> inventory) {
 		super(name, description);
 		this.location = location;
 		this.inventory = inventory;
