@@ -35,7 +35,7 @@ public abstract class Character extends GameObject {
 	public List<String> getItems() {
 		List<String> itemNames = new ArrayList<>();
 		for (Item item : this.inventory) {
-			itemNames.add(item.name);
+			itemNames.add(item.getName());
 		}
 		return itemNames;
 	}
@@ -90,7 +90,7 @@ public abstract class Character extends GameObject {
 	public String moveTo(Room theRoom) {
 		assert theRoom != null;
 		setLocation(theRoom);
-		return "You are in the " + theRoom.name + ". "+ theRoom.description;
+		return "You are in the " + theRoom.getName() + ". "+ theRoom.getDescription();
 	}	
 
 }
