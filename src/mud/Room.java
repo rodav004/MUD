@@ -31,6 +31,13 @@ public class Room extends GameObject {
 		return doors[doorDirection.index()];
 	}
 	
+	public void populate(Character ...theCharacters) {
+		for (Character theCharacter : theCharacters) {
+			theCharacter.moveTo(this);
+		}
+	}
+	
+	//Ideally, only Character.moveTo() should call Room.addCharacters() and Room.removeCharacters().
 	public void addCharacters(Character ...theCharacters) {
 		for (Character theCharacter : theCharacters) {
 			if (characters.contains(theCharacter)) {
