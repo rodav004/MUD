@@ -6,7 +6,7 @@ public class UserInterface {
 	private static Scanner input;
 
 	public static void main(String[] args) {
-		Game game = new Game()
+		Game game = new Game();
 		game.start();
 
 // 		String start = "Hello! Your name is Bob and you are in the Nice Room.";
