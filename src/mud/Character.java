@@ -6,14 +6,14 @@ public abstract class Character extends GameObject {
         public Room getLocation() {
 		return this.location;
 	}
-	public void setLocation(Room theRoom) {
+	private void setLocation(Room theRoom) {
 		assert theRoom != null;
-                if (location != null) {
-			Room lastLocation = location;
-			location = null;
-			lastLocation.removeCharacters(this);
-		}
-
+		assert location != null; 
+                
+		Room lastLocation = location;
+		location = null;
+		
+		lastLocation.removeCharacters(this);
                 theRoom.addCharacters(this);
 		location = theRoom;
 	}
@@ -22,13 +22,16 @@ public abstract class Character extends GameObject {
 	
 	public Character(String name, String description, Room location, List<Item> inventory) {
 		super(name, description);
-		setLocation(location);	
+		this.location = location;
 		this.inventory = inventory;
 	}
 	public Character(String name, String description, Room location) {
 		this(name, description, location, new ArrayList<Item>());
 	}
-
+	public Character(String name, String description) {
+		this(name,description,null);
+	}	
+	
 	public List<String> getItems() {
 		List<String> itemNames = new ArrayList<>();
 		for (Item item : this.inventory) {
@@ -38,12 +41,12 @@ public abstract class Character extends GameObject {
 	}
 	
 	//add an item to a person's inventory
- 	/*public String addItem(String item) {
-		String name = item.name;
+ 	/*public String addItem(<Item> item) {
+		String name = item.getName();
  		String result = null;
-  		ArrayList<Item> roomItems = location.getItems();
+  		List<Item> roomItems = location.getItems();
   		for (Item roomItems: itemX) {
-  			if (itemX.equals(item))
+  			if (itemX.equals(name))
   				inventory.add(item);
   				roomItems.remove(item);
  				result = "The item " + name + " is now in your inventory. The description is " + item.getDescription();
@@ -64,15 +67,14 @@ public abstract class Character extends GameObject {
 		}
 		
 		Door exit = location.getDoor(theDirection);
-		if (exit != null) {
-			setLocation(exit.room);
-			return "You are in the " + exit.room.getName() + ". "+ exit.room.getName();
-		}
-		else {
-			return "There is not a door in that direction";
-		}
-
+		
+		return exit != null ? moveTo(exit.room) : "There is not a door in that direction!";
 	}
 
+	public String moveTo(Room theRoom) {
+		assert theRoom != null;
+		setLocation(theRoom);
+		return "You are in the " + theRoom.name + ". "+ theRoom.description;
+	}	
 
 }
