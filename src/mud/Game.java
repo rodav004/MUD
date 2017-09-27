@@ -14,7 +14,7 @@ public class Game {
 		
 		//Character constructed
 		Character bob = new Character("Bob","Bob has brown hair.");
-		Character kaz = new Character("Kaz","Neo Yokio's most eligible bachelor…")
+		Character kaz = new Character("Kaz","Neo Yokio's most eligible bachelor…");
 		//Character put in room
 		room1.populate(bob,kaz);
 		
