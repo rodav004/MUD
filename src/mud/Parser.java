@@ -34,7 +34,7 @@ public class Parser {
               * "special" action like Action.EXIT, there should also be an
               * argument to that action, (aka the "target" of the command) 
               * which for now is the second element of splitStrings. This rule may change
-              * in the future, but for now a command without an argument will cause the parser to fail.
+              * in the future, but for now a normal command without an argument will cause the parser to fail.
               */ 
 	     if (splitStrings.size() < 2) {
 		throw new ParserFailureException();
