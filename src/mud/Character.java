@@ -41,17 +41,19 @@ public abstract class Character extends GameObject {
 	}
 	
 	//add an item to a person's inventory
- 	/*public String addItem(<Item> item) {
+ 	public String addItem(<Item> item) {
 		String name = item.getName();
  		String result = null;
   		List<Item> roomItems = location.getItems();
   		for (Item roomItems: itemX) {
   			if (itemX.equals(name))
+  			{
   				inventory.add(item);
   				roomItems.remove(item);
  				result = "The item " + name + " is now in your inventory. The description is " + item.getDescription();
+  			}
  			else 
- 				result = "That item is not in this room."
+ 				result = "That item is not in this room.";
   		}
 		return result;
  	}
@@ -63,15 +65,16 @@ public abstract class Character extends GameObject {
 		List<Item> inventoryItems = inventory.getItems();
 		for (Item inventoryItems: itemX) {
 			if (itemX.equals(name))
+			{
 				roomItems.add(item);
 				inventory.remove(item);
 				result = "The item " + name + " is now in the room " + location + ".";
+			}
 			else
-				result = "That item is not in your inventory."
+				result = "That item is not in your inventory.";
 		}
 		return result;
 	}
- 	*/
   	
 	//this IS working! hooray!
 	public String move(String direction) {
