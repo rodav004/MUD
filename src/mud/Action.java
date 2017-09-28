@@ -1,15 +1,23 @@
 package mud;
 
 /**
- *
- * @author michaelsavich
+ * Action is an enum that represents the concrete
+ * actions that the MUD supports.
  */
 public enum Action {
     MOVE,
     TAKE,
     ATTACK,
     EXIT;
-    
+        
+        /**
+         * Maps an input String to an Action value.
+         * This method is intended to be where synonymous inputs get mapped
+         * to a single Action.
+         * @param str The input String, typically from the end user.
+         * @return An action corresponding to the input, or null if the input
+         * couldn't be mapped to an Action.
+         */
 	public static Action resolve(String str) {
 		Action result;
 		switch (str.toUpperCase()) {
