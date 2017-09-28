@@ -27,13 +27,14 @@ public class UserInterface {
 		assert success; //Not sure what to do if player creation fails. For now let's just kill ourselves…
 			
 		System.out.println("Hello " + name + "! You are in " + "Nice Room");
+		do {	
+			System.out.println("Enter command:"); //for example "move west"	
+			Command cmd = Parser.parse(input.nextLine());
+			assert cmd != null; //Again, not sure what we should do if parsing fails…
 		
-		System.out.println("Enter command:"); //for example "move west"	
-		Command cmd = Parser.parse(input.nextLine());
-		assert cmd != null; //Again, not sure what we should do if parsing fails…
-		
-		String output = game.performCommand(name,cmd);
-		System.out.println(output);		
+			String output = game.performCommand(name,cmd);
+			System.out.println(output);
+		} while (true);		
 	}
 
 }
