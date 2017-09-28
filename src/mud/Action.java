@@ -5,9 +5,10 @@ package mud;
  * @author michaelsavich
  */
 public enum Action {
-	MOVE,
-	TAKE,
-	ATTACK;
+    MOVE,
+    TAKE,
+    ATTACK,
+    EXIT;
     
 	public static Action resolve(String str) {
 		Action result;
