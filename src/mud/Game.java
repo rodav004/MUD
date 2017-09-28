@@ -5,7 +5,7 @@ package mud;
  * well as logic for interacting with said model.
  */
 public class Game {
-	/**
+        /**
          * Represents the game world.
          * Currently this is an array of Room objects,
          * but that may change in the future. Therefore,
@@ -48,7 +48,7 @@ public class Game {
 		world = new Room[]{ room1, room2 };
 		
 	}
-	/**
+        /**
          * Attempts to perform a Command with the specified user and Command.
          * @param userName The name of the Player. It is assumed that no two Player objects
          * will have the same name. How this method maps the userName to a Player is considered an
@@ -97,7 +97,7 @@ public class Game {
          * @param newName The name to give the new Player. Should not be null.
          * @param newDescription The description to give the new Player. Should not be null.
          * @param startingRoomName The name of the room to put the player in. If this value cannot be mapped to a
-	 * Room in the Game, this method will fail. Should not be null.
+         * Room in the Game, this method will fail. Should not be null.
          * @return A boolean representing whether the Player was successfully created.
          */
 	public boolean newPlayer(String newName, String newDescription, String startingRoomName) {
@@ -113,10 +113,12 @@ public class Game {
 		Player p = new Player(newName, newDescription, startingRoom);
 		return true;	
 	}
-	/**
+        /**
          * Finds a Room with a given name within the model.
          * This method is private and should not be used by other classes,
          * as that would expose the Room class.
+         * @param roomName The name of the Room to find. Should not be null.
+         * @return The found Room, or null if no Room was found.
          */
 	private Room findRoom(String roomName) {
 		assert roomName != null;
@@ -132,6 +134,8 @@ public class Game {
          * Finds a Character with a given name within the model.
          * This method is private and should not be used by other classes,
          * as that would expose the Character class.
+         * @param charName The name of the Character to find. Should not be null.
+         * @return The found Character, or null if no Character was found.
          */
 	private Character findCharacter(String charName) {
 		assert charName != null;
