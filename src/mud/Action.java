@@ -10,7 +10,8 @@ import java.util.Optional;
 public enum Action {
     MOVE,
     TAKE,
-    ATTACK;
+    ATTACK,
+    EXIT;
     
     public static Action resolve(String str) {
 	 Action result;
@@ -24,6 +25,9 @@ public enum Action {
 	     case "ATTACK":
 		  result = Action.ATTACK;
 		  break;
+	     case "EXIT":
+	          result = Action.EXIT;
+                  break; 
 	     default:
 		  result = null;
 		  break;
