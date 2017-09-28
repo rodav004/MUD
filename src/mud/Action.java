@@ -42,6 +42,9 @@ public enum Action {
 	        case "ATTACK":
 			result = Action.ATTACK;
 		  	break;
+		case "EXIT":
+			result = Action.EXIT;
+			break;
 	   	default:
 			result = null;
 			break;
