@@ -26,10 +26,16 @@ public class Parser {
 	     }
 	     
              if (action == Action.EXIT) {
-		 System.out.println("You have ended the game");
-		 System.exit(0);
-	     }
-	     
+                 System.out.println("You have ended the game");
+                 System.exit(0);
+             }
+             /*
+              * The assumption here is that if the input is not a
+              * "special" action like Action.EXIT, there should also be an
+              * argument to that action, (aka the "target" of the command) 
+              * which for now is the second element of splitStrings. This rule may change
+              * in the future, but for now a command without an argument will cause the parser to fail.
+              */ 
 	     if (splitStrings.size() < 2) {
 		throw new ParserFailureException();
 	     }
