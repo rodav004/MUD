@@ -58,18 +58,25 @@ public class Room extends GameObject {
 		return result;
 	}
 	
+	/**
+	* Adds an Item to this Room.
+	* @param The Item to add.
+	*/
 	public void addItem(Item item) {
 		items.add(item);
 	}
-	public boolean removeItem(String itemName) {
-		boolean result = false; //success or failure?
+	/**
+	* Attempts to remove the specified Item from this Room.
+	* @param The name of the Item you hope to remove.
+	* @return The Item that was removed, or null if no Item was found.
+	*/ 
+	public Item removeItem(String itemName) {
 		for (Item item : items) {
 			if (item.getName().equals(itemName)) {
 				items.remove(item);
-				result = true; //success
-				break;
+				return item; //success
 			}
 		}
-		return result;
+		return null; //failure
 	}
 }
