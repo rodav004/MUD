@@ -53,6 +53,8 @@ public class Game {
 			case ATTACK:
 				throw new UnsupportedOperationException("Attack not yet implemented");
 				// break;
+			case EXIT:
+				System.exit(0);
 			default:
 				result = "Could not parse command!";
 				break;
