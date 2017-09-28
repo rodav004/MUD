@@ -55,6 +55,7 @@ public class Game {
 				// break;
 			default:
 				result = "Could not parse command!";
+				break;
 		}
 		assert result != null;
 
