@@ -23,7 +23,12 @@ public abstract class Character extends GameObject {
          */
 	private void setLocation(Room theRoom) {
 		assert theRoom != null;
-               
+
+		/*
+		 * Note that the location field of this object
+		 * must be null before attempting to call Room.add/removeCharacters
+		 * or else an assertion will fail.
+		 */
 		if (location != null) {
 			Room lastLocation = location;
 			location = null; 
