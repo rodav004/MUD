@@ -9,14 +9,6 @@ public class UserInterface {
 		Game game = new Game();
 		game.start();
 
-// 		String start = "Hello! Your name is Bob and you are in the Nice Room.";
-// 		System.out.println(start);
-// 		input = new Scanner(System.in);
-// 		String direction = input.next();
-// 		direction = direction.toString();
-// 		String r = Game.person.move(direction);
-// 		System.out.println(r);
-		
 		//creating a new charcater hopefully
 		input = new Scanner(System.in);
 		System.out.println("What is your name?");
