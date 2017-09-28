@@ -20,7 +20,7 @@ public class UserInterface {
 		//creating a new charcater hopefully
 		input = new Scanner(System.in);
 		System.out.println("What is your name?");
-		String name = input.next();
+		String name = input.nextLine();
 		
 		boolean success = game.newPlayer(name, "You have no description yet", "Nice Room");
 	
@@ -29,7 +29,7 @@ public class UserInterface {
 		System.out.println("Hello " + name + "! You are in " + "Nice Room");
 		
 		System.out.println("Enter command:"); //for example "move west"	
-		Command cmd = Parser.parse(input.next());
+		Command cmd = Parser.parse(input.nextLine());
 		assert cmd != null; //Again, not sure what we should do if parsing fails…
 		
 		String output = game.performCommand(name,cmd);

@@ -23,12 +23,12 @@ public abstract class Character extends GameObject {
          */
 	private void setLocation(Room theRoom) {
 		assert theRoom != null;
-		assert location != null; 
-                
-		Room lastLocation = location;
-		location = null;
-		
-		lastLocation.removeCharacters(this);
+               
+		if (location != null) {
+			Room lastLocation = location;
+			location = null; 
+			lastLocation.removeCharacters(this);
+		}
                 theRoom.addCharacters(this);
 		location = theRoom;
 	}
@@ -42,7 +42,7 @@ public abstract class Character extends GameObject {
          */
 	public Character(String name, String description, Room location, List<Item> inventory) {
 		super(name, description);
-		this.location = location;
+		setLocation(location);
 		this.inventory = inventory;
 	}
         /**
