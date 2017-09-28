@@ -61,6 +61,28 @@ public class Game {
 		return result;
 	}
 	
+	public boolean newPlayer(String newName, String newDescription, String startingRoomName) {
+		assert world != null;
+
+		Room startingRoom = findRoom(startingRoomName);
+		
+		if (startingRoom == null) {
+			return false;
+		}
+		
+		Player p = new Player(newName, newDescription, startingRoom);
+		return true;	
+	}
+	
+	private Room findRoom(String roomName) {
+		assert world != null;
+		for (Room aRoom : world) {
+			if (aRoom.getName().equals(roomName)) {
+				return aRoom;
+			}
+		}
+		return null;
+	}	
 	private Character findCharacter(String charName) {
 		assert world != null;
 

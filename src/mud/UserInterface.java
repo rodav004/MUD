@@ -21,9 +21,19 @@ public class UserInterface {
 		input = new Scanner(System.in);
 		System.out.println("What is your name?");
 		String name = input.next();
-		Player playerOne = new Player(name, "You have no description yet.", room1, <Item> inventory);
-		System.out.println("Hello " + name + "! You are in " + room1.getName()); 
 		
+		boolean success = game.newPlayer(name, "You have no description yet", "Nice Room");
+	
+		assert success; //Not sure what to do if player creation fails. For now let's just kill ourselves…
+			
+		System.out.println("Hello " + name + "! You are in " + "Nice Room");
+		
+		System.out.println("Enter command:"); //for example "move west"	
+		Command cmd = Parser.parse(input.next());
+		assert cmd != null; //Again, not sure what we should do if parsing fails…
+		
+		String output = game.performCommand(name,cmd);
+		System.out.println(output);		
 	}
 
 }
