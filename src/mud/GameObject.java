@@ -2,7 +2,8 @@ package mud;
 
 /**
 * GameObject is the root object for all model
-* objects in the MUD.
+* objects in the MUD. Model objects are not intended to be used by classes other than Game,
+* so please refrain from using GameObject subclasses elsewhere.
 */
 public abstract class GameObject {
 	private String name;
