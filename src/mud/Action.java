@@ -1,8 +1,5 @@
 package mud;
 
-import java.util.Locale;
-import java.util.Optional;
-
 /**
  *
  * @author michaelsavich
@@ -14,7 +11,7 @@ public enum Action {
     
 	public static Action resolve(String str) {
 		Action result;
-		switch (str.toUpperCase(Locale.ROOT)) {
+		switch (str.toUpperCase()) {
 		case "GO":
 		case "TRAVEL":
 		case "JOURNEY":
