@@ -60,6 +60,7 @@ public class Game {
          * to the end user's console.
          */
 	public String performCommand(String userName, Command cmd) {
+		assert userName != null; assert cmd != null;
 		String result = null;
 
 		Character user = findCharacter(userName);
@@ -100,8 +101,9 @@ public class Game {
          * @return A boolean representing whether the Player was successfully created.
          */
 	public boolean newPlayer(String newName, String newDescription, String startingRoomName) {
+		assert newName != null; assert newDescription != null; assert startingRoomName != null;
 		assert world != null;
-
+		
 		Room startingRoom = findRoom(startingRoomName);
 		
 		if (startingRoom == null) {
@@ -117,6 +119,7 @@ public class Game {
          * as that would expose the Room class.
          */
 	private Room findRoom(String roomName) {
+		assert roomName != null;
 		assert world != null;
 		for (Room aRoom : world) {
 			if (aRoom.getName().equals(roomName)) {
@@ -131,6 +134,7 @@ public class Game {
          * as that would expose the Character class.
          */
 	private Character findCharacter(String charName) {
+		assert charName != null;
 		assert world != null;
 
 		Character result = null;
