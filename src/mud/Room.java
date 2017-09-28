@@ -47,4 +47,14 @@ public class Room extends GameObject {
 			characters.remove(theCharacter);
 		}
 	}
+	public Character findCharacter(String charName) {
+		Character result = null;
+		for (Character character : characters) {
+			if (character.getName().equals(charName)) {
+				result = character;
+				break;
+			}
+		}
+		return result;
+	}
 }
