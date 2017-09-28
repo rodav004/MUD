@@ -73,37 +73,36 @@ public abstract class Character extends GameObject {
 	}
 	
 	//add an item to a person's inventory
- 	public String addItem(<Item> item) {
+ 	public String addItem(Item item) {
+		String result = null;
+
 		String name = item.getName();
- 		String result = null;
-  		List<Item> roomItems = location.getItems();
-  		for (Item roomItems: itemX) {
-  			if (itemX.equals(name))
-  			{
-  				inventory.add(item);
-  				roomItems.remove(item);
- 				result = "The item " + name + " is now in your inventory. The description is " + item.getDescription();
-  			}
- 			else 
- 				result = "That item is not in this room.";
-  		}
+		Item foundItem = location.removeItem(name);
+  		if (foundItem != null) {
+  			inventory.add(item);
+			result = "The item " + name + " is now in your inventory. The description is " + item.getDescription();
+ 		}
+ 		else {
+ 			result = "That item is not in this room.";
+ 		}
+		
 		return result;
  	}
 	
 	//remove an item from a person's inventory
-	public String removeItem(<Item> item){
-		String name = item.getName();
+	public String removeItem(Item item){
 		String result = null;
-		List<Item> inventoryItems = inventory.getItems();
-		for (Item inventoryItems: itemX) {
-			if (itemX.equals(name))
-			{
-				roomItems.add(item);
+
+		String name = item.getName();
+		for (Item itemX : inventory) {
+			if (itemX.getName().equals(name)) {
+				location.addItem(item);
 				inventory.remove(item);
-				result = "The item " + name + " is now in the room " + location + ".";
+				result = "The item " + name + " is now in the room " + location.getName() + ".";
 			}
-			else
+			else {
 				result = "That item is not in your inventory.";
+			}
 		}
 		return result;
 	}
