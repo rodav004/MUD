@@ -1,9 +1,24 @@
 package mud;
 
+/**
+ * Represents the game. Contains the model as
+ * well as logic for interacting with said model.
+ */
 public class Game {
-	
+	/**
+         * Represents the game world.
+         * Currently this is an array of Room objects,
+         * but that may change in the future. Therefore,
+         * it is imperative that this field is not simply
+         * exposed via a getter.
+         */
 	private Room[] world;
-
+        
+        /**
+         * Starts the game. Many other methods on Game will fail
+         * if this method hasn't been called first, so call start as soon as you create
+         * an object of type Game.
+         */
 	public void start() {
 		
 		// Room 1
@@ -33,7 +48,17 @@ public class Game {
 		world = new Room[]{ room1, room2 };
 		
 	}
-	
+	/**
+         * Attempts to perform a Command with the specified user and Command.
+         * @param userName The name of the Player. It is assumed that no two Player objects
+         * will have the same name. How this method maps the userName to a Player is considered an
+         * implementation detail. Should not be null.
+         * @param cmd The command to execute. This method will attempt to perform the specified action
+         * using the Player and the Command's target, but it may fail if the command's target cannot be mapped
+         * to an object in the game world. Should not be null.
+         * @return A String describing the result of the action taken. This String is intended to be printed directly
+         * to the end user's console.
+         */
 	public String performCommand(String userName, Command cmd) {
 		String result = null;
 
@@ -63,7 +88,17 @@ public class Game {
 
 		return result;
 	}
-	
+        /**
+         * Creates a new player in the game's world. Since the Character class needs to be initialized
+         * with a location, and the Room class shouldn't be exposed to UserInterface if at all possible,
+         * it would be inappropriate to place a Character directly in a Room. Instead, use this method to
+         * create a Player with the supplied parameters.
+         * @param newName The name to give the new Player. Should not be null.
+         * @param newDescription The description to give the new Player. Should not be null.
+         * @param startingRoomName The name of the room to put the player in. If this value cannot be mapped to a
+	 * Room in the Game, this method will fail. Should not be null.
+         * @return A boolean representing whether the Player was successfully created.
+         */
 	public boolean newPlayer(String newName, String newDescription, String startingRoomName) {
 		assert world != null;
 
@@ -76,7 +111,11 @@ public class Game {
 		Player p = new Player(newName, newDescription, startingRoom);
 		return true;	
 	}
-	
+	/**
+         * Finds a Room with a given name within the model.
+         * This method is private and should not be used by other classes,
+         * as that would expose the Room class.
+         */
 	private Room findRoom(String roomName) {
 		assert world != null;
 		for (Room aRoom : world) {
@@ -85,7 +124,12 @@ public class Game {
 			}
 		}
 		return null;
-	}	
+	}
+        /**
+         * Finds a Character with a given name within the model.
+         * This method is private and should not be used by other classes,
+         * as that would expose the Character class.
+         */
 	private Character findCharacter(String charName) {
 		assert world != null;
 
