@@ -2,10 +2,25 @@ package mud;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * An abstract class that represents a character in the game's model.
+ * As it is abstract, this class cannot be instantiated. Consider using
+ * Player or Mob, or create your own subclass.
+ */
 public abstract class Character extends GameObject {
+        /**
+         * Gets the Room this Character is in.
+         * This method should not be called by classes other
+         * than Game. In a formal project, this would be enforced using
+         * multiple packages, but for now just avoid using it in places like UserInterface.
+         */
         public Room getLocation() {
 		return this.location;
 	}
+        /**
+         * Sets the Room this Character is in.
+         * Not a public method.
+         */
 	private void setLocation(Room theRoom) {
 		assert theRoom != null;
 		assert location != null; 
@@ -20,18 +35,35 @@ public abstract class Character extends GameObject {
 	private Room location;
 	private List<Item> inventory;
 	
+	/**
+         * Creates a new Chracter with the supplied parameters. This is
+         * the primary constructor of Character; all other constructors are convenince.
+         * @return The Character that was created.
+         */
 	public Character(String name, String description, Room location, List<Item> inventory) {
 		super(name, description);
 		this.location = location;
 		this.inventory = inventory;
 	}
+        /**
+         * Creates a new Character. Equivalent to passing an empty list to the inventory parameter
+         * of the primary constructor.
+         * @return The Character that was created.
+         */
 	public Character(String name, String description, Room location) {
 		this(name, description, location, new ArrayList<Item>());
 	}
+        /**
+         * DEPRECATED DO NOT USE
+         */
 	public Character(String name, String description) {
 		this(name,description,null);
 	}	
 	
+        /**
+         * Gets a description of this Character's inventory.
+         * @return A list of Strings representing the names of the Item objects in this Character's inventory.
+         */
 	public List<String> getItems() {
 		List<String> itemNames = new ArrayList<>();
 		for (Item item : this.inventory) {
@@ -75,8 +107,11 @@ public abstract class Character extends GameObject {
 		}
 		return result;
 	}
-  	
-	//this IS working! hooray!
+        /**
+         * Move this character in a direction.
+         * @param direction A String representing the direction to move the Character in.
+         * @return A String representing the result of this method, suitable for display to the end user.
+         */
 	public String move(String direction) {
 		assert location != null : "Character isn't in a room yet!";
 	
