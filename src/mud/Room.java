@@ -57,4 +57,19 @@ public class Room extends GameObject {
 		}
 		return result;
 	}
+	
+	public void addItem(Item item) {
+		items.add(item);
+	}
+	public boolean removeItem(String itemName) {
+		boolean result = false; //success or failure?
+		for (Item item : items) {
+			if (item.getName().equals(itemName)) {
+				items.remove(item);
+				result = true; //success
+				break;
+			}
+		}
+		return result;
+	}
 }
