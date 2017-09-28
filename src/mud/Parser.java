@@ -19,6 +19,11 @@ public class Parser {
 	 List<String> splitStrings = Arrays.asList(input.split(" "));
 	 
 	 try {
+	     if (input.equals("exit"))
+	     {
+		 System.out.println("You have ended the game");
+		 System.exit(0);
+	     }
 	     if (splitStrings.size() < 2) {
 		throw new ParserFailureException();
 	     }
