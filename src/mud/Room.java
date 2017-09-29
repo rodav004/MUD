@@ -2,6 +2,13 @@ package mud;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * A discrete place within the MUD's model.
+ * At its heart, a world in this MUD is simply a collection
+ * of Room objects. Rooms can contain Items and Characters, though
+ * Character objects also know what Room they are in and are the ones
+ * primarily responsible for managing that relationship.
+ */
 public class Room extends GameObject {
 	private List<Item> items;
 	private List<Character> characters;

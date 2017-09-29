@@ -1,6 +1,9 @@
 package mud;
 import java.util.Scanner;
 
+/**
+* Handles input from the end user, and routes it to a Game object.
+*/
 public class UserInterface {
 	
 	private static Scanner input;

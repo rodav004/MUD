@@ -1,5 +1,8 @@
 package mud;
 
+/**
+* The directional inputs that the MUD understands.
+*/
 public enum Direction {
   	NORTH, SOUTH, EAST, WEST;
   
