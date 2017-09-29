@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"mud","l":"Action"},{"p":"mud","l":"Character"},{"p":"mud","l":"Command"},{"p":"mud","l":"Direction"},{"p":"mud","l":"Door"},{"p":"mud","l":"Game"},{"p":"mud","l":"GameObject"},{"p":"mud","l":"Item"},{"p":"mud","l":"Items"},{"p":"mud","l":"Mob"},{"p":"mud","l":"Parser"},{"p":"mud","l":"Player"},{"p":"mud","l":"Room"},{"p":"mud","l":"UserInterface"}]
