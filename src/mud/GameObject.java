@@ -21,7 +21,7 @@ public abstract class GameObject {
 	
 	/**
 	* Sets the name of this GameObject.
-	* @param name The display name of this object
+	* @param newName The display name of this object
 	*/
 	public void setName(String newName) {
 		assert newName != null;

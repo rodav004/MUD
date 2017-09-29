@@ -60,14 +60,14 @@ public class Room extends GameObject {
 	
 	/**
 	* Adds an Item to this Room.
-	* @param The Item to add.
+	* @param item The Item to add.
 	*/
 	public void addItem(Item item) {
 		items.add(item);
 	}
 	/**
 	* Attempts to remove the specified Item from this Room.
-	* @param The name of the Item you hope to remove.
+	* @param itemName The name of the Item you hope to remove.
 	* @return The Item that was removed, or null if no Item was found.
 	*/ 
 	public Item removeItem(String itemName) {

@@ -43,7 +43,6 @@ public abstract class Character extends GameObject {
 	/**
          * Creates a new Chracter with the supplied parameters. This is
          * the primary constructor of Character; all other constructors are convenince.
-         * @return The Character that was created.
          */
 	public Character(String name, String description, Room location, List<Item> inventory) {
 		super(name, description);
@@ -53,7 +52,6 @@ public abstract class Character extends GameObject {
         /**
          * Creates a new Character. Equivalent to passing an empty list to the inventory parameter
          * of the primary constructor.
-         * @return The Character that was created.
          */
 	public Character(String name, String description, Room location) {
 		this(name, description, location, new ArrayList<Item>());

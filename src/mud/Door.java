@@ -14,7 +14,6 @@ public class Door {
 	/**
 	 * Creates a new Door that points to a room.
 	 * @param room The room this Door points to.
-	 * @return The newly created Door.
 	 */	
 	public Door(Room room) {
 		this.room = room;
