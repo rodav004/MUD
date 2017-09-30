@@ -1,4 +1,4 @@
-package mud;
+package mud.model;
 
 /**
 * GameObject is the root object for all model

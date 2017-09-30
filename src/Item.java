@@ -1,4 +1,4 @@
-package mud;
+package mud.model;
 
 /**
  * An inert object in the MUD.

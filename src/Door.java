@@ -1,4 +1,4 @@
-package mud;
+package mud.model;
 /**
  * A Door points to a Room.
  * Although it does not inherit from GameObject,

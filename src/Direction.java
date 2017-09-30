@@ -1,4 +1,4 @@
-package mud;
+package mud.model;
 
 /**
 * The directional inputs that the MUD understands.

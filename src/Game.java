@@ -1,4 +1,5 @@
 package mud;
+import mud.model.*;
 
 /**
  * Represents the game. Contains the model as
@@ -63,7 +64,7 @@ public class Game {
 		assert userName != null; assert cmd != null;
 		String result = null;
 
-		Character user = findCharacter(userName);
+		mud.model.Character user = findCharacter(userName);
 		Action act = cmd.getAction();
 		if (user == null) { 
 			return "Couldn't find user " + userName + "!"; 
@@ -137,11 +138,11 @@ public class Game {
          * @param charName The name of the Character to find. Should not be null.
          * @return The found Character, or null if no Character was found.
          */
-	private Character findCharacter(String charName) {
+	private mud.model.Character findCharacter(String charName) {
 		assert charName != null;
 		assert world != null;
 
-		Character result = null;
+		mud.model.Character result = null;
 		for (Room aRoom : world) {
 			result = aRoom.findCharacter(charName);
 			if (result != null) {
