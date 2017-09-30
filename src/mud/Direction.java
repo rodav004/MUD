@@ -29,21 +29,21 @@ public enum Direction {
 	public static Direction resolve(String input) {
 		Direction result;
 		
-		switch (input.toLowerCase()) {
-		case "up":
-		case "north":
+		switch (input.toUpperCase()) {
+		case "UP":
+		case "NORTH":
 			result = Direction.NORTH;
 			break;
-		case "down":
-		case "south":
+		case "DOWN":
+		case "SOUTH":
 			result = Direction.SOUTH;
 			break;
-		case "right":
-		case "east":
+		case "RIGHT":
+		case "EAST":
 			result = Direction.EAST; 
 			break;
-		case "left":
-		case "west":
+		case "LEFT":
+		case "WEST":
 			result = Direction.WEST;
 			break;
 		default:
