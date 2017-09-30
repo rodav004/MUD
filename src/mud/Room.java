@@ -61,6 +61,9 @@ public class Room extends GameObject {
 	* that a Character would reach if they moved NORTH within this Room.
 	*/
 	public void setDoor(Door door, Direction doorDirection) {
+		assert door != null : "Parameter 'door' should not be null!";
+		assert doorDirection != null : "Parameter 'doorDirection' should not be null!";
+
 		doors[doorDirection.index()] = door;
 	}
 	/**
@@ -77,6 +80,8 @@ public class Room extends GameObject {
 	* or false otherwise.
 	*/
 	public boolean containsCharacter(Character theCharacter) {
+		assert theCharacter != null : "Parameter 'theCharacter' should not be null!";
+
 		return this.characters.contains(theCharacter);
 	}
 	/**
@@ -116,6 +121,8 @@ public class Room extends GameObject {
 	* name is within this Room.
 	*/
 	public Character findCharacter(String charName) {
+		assert charName != null : "Parameter 'charName' should not be null!";
+
 		Character result = null;
 		for (Character character : characters) {
 			if (character.getName().equals(charName)) {
@@ -131,6 +138,8 @@ public class Room extends GameObject {
 	* @param item The Item to add.
 	*/
 	public void addItem(Item item) {
+		assert item != null : "Parameter 'item' should not be null!";
+
 		items.add(item);
 	}
 	/**
