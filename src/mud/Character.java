@@ -22,7 +22,7 @@ public abstract class Character extends GameObject {
          * Not a public method.
          */
 	private void setLocation(Room theRoom) {
-		assert theRoom != null;
+		assert theRoom != null : "Parameter 'theRoom' should not be null!";
 
 		/*
 		 * Note that the location field of this object
@@ -77,6 +77,8 @@ public abstract class Character extends GameObject {
 	
 	//add an item to a person's inventory
  	public String addItem(Item item) {
+		assert item != null : "Parameter 'item' should not be null!";
+
 		String result = null;
 
 		String name = item.getName();
@@ -94,6 +96,8 @@ public abstract class Character extends GameObject {
 	
 	//remove an item from a person's inventory
 	public String removeItem(Item item){
+		assert item != null : "Parameter 'item' should not be null!";
+
 		String result = null;
 
 		String name = item.getName();
@@ -115,6 +119,7 @@ public abstract class Character extends GameObject {
          * @return A String representing the result of this method, suitable for display to the end user.
          */
 	public String move(String direction) {
+		assert direction != null : "Parameter 'direction' should not be null!";
 		assert location != null : "Character isn't in a room yet!";
 	
 		Direction theDirection = Direction.resolve(direction);
