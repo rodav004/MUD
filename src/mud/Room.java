@@ -14,6 +14,16 @@ public class Room extends GameObject {
 	private List<Character> characters;
 	private Door[] doors;
 	
+	/**
+	* Creates a new Room object. This is the primary constructor.
+	* @param name The name of this Room.
+	* @param description The description of this Room.
+	* @param items The Item objects that this Room 'contains'.
+	* @param characters The Character objects initially in this Room.
+	* @param doors The exits to this room, as an array of Door objects, where each position in the array 
+	* maps to a specific direction. The length of this array should be equal to the number of values in Direction. If
+ 	* there is no door in a certain direction, that position in the array should have a value of null.
+	*/
 	public Room(String name, String description, List<Item> items, List<Character> characters,Door[] doors) {
 		super(name, description);
 		this.items = items != null ? items : new ArrayList<>();
@@ -26,34 +36,85 @@ public class Room extends GameObject {
 			this.doors = new Door[Direction.count];
 		}
 	}
-	
+	/**
+	* Convenience constructor. Primarily differs in that instead of providing a list of Item objects, you can
+	* instead supply an array of Items values. The result of calling this constructor is equivalent to creating an array of
+	* Items values, calling make() on each of them, storing that as a list, and supplying that to the items parameter of the primary
+	* constructor. Using Items is generally safer as it prevents you from having a reference to the Item objects in this Room, which
+	* eliminates an entire category of bugs.
+	* @param name The name of this Room.
+	* @param description The description of this Room.
+	* @param items An array of Items values, which will be converted to Item objects using Items.make().
+	* @param characters Then Character objects initially in this room.
+	* @param doors The exits to this room, as an array of Door objects, where each position in the array 
+	* maps to a specific direction. The length of this array should be equal to the number of values in Direction. If
+	* there is no door in a certain direction, that position in the array should have a value of null.
+	*/
 	public Room(String name, String description, Items[] items, List<Character> characters,Door[] doors) {
 		this(name,description,Items.make(items),characters,doors);
 	}
-	
+	/**
+	* Installs a Door in a given Direction.
+	* @param door The door to install.
+	* @param doorDirection The direction this Door is set to. For
+	* example, setting a Door in the NORTH direction means it is the Door
+	* that a Character would reach if they moved NORTH within this Room.
+	*/
 	public void setDoor(Door door, Direction doorDirection) {
 		doors[doorDirection.index()] = door;
 	}
+	/**
+	* Gets the Door in a given Direction.
+	* @param doorDirection The direction the Door you are looking for is in.
+	* @return The Door in the supplied Direction, or null if there is no Door in that Direction.
+	*/
 	public Door getDoor(Direction doorDirection) {
 		return doors[doorDirection.index()];
 	}
-
+	/**
+	* Checks if a Character is located in this Room.
+	* @return True if the supplied Character is within this Room,
+	* or false otherwise.
+	*/
 	public boolean containsCharacter(Character theCharacter) {
 		return this.characters.contains(theCharacter);
 	}
-	
+	/**
+	* Adds the supplied Character objects to this Room.
+	* Please avoid using this method directly. At the time of writing,
+	* if assertions are enabled, and a supplied Character is in a location other null, the
+	* MUD will crash. If assertions are disabled, then the ensuing behaviour will be undefined and
+	* dependent on how well subsequent methods handle unexpected null values.
+	* @param theCharacters A variable number of Character objects to add to this Room. It
+	* is perfectly acceptable to supply one Character object if that is all that is needed.
+	*/
 	public void addCharacters(Character ...theCharacters) {
 		for (Character theCharacter : theCharacters) {
 			assert theCharacter.getLocation() == null : "Can't add character currently in a room!";
 			characters.add(theCharacter);
 		}
 	}
+	/**
+	* Removes the supplied Character objects from this Room.
+	* Please avoid using this method directly. At the time of writing,
+	* if assertions are enabled, and a supplied Character is in a location other null, the
+	* MUD will crash. If assertions are disabled, then the ensuing behaviour will be undefined and
+	* dependent on how well subsequent methods handle unexpected null values.
+	* @param theCharacters A variable number of Character objects to remove from this Room. It
+	* is perfectly acceptable to supply one Character object if that is all that is needed.
+	*/
 	public void removeCharacters(Character ...theCharacters) {
 		for (Character theCharacter : theCharacters) {
 			assert theCharacter.getLocation() == null : "Can't remove character currently in a room!";
 			characters.remove(theCharacter);
 		}
 	}
+	/**
+	* Finds a Character object with the given name.
+	* @param charName The name of the Character to search for.
+	* @return The Character found, or none if no Character with that
+	* name is within this Room.
+	*/
 	public Character findCharacter(String charName) {
 		Character result = null;
 		for (Character character : characters) {
