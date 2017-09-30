@@ -57,13 +57,6 @@ public abstract class Character extends GameObject {
 		this(name, description, location, new ArrayList<Item>());
 	}
         /**
-         * DEPRECATED DO NOT USE
-         */
-	public Character(String name, String description) {
-		this(name,description,null);
-	}	
-	
-        /**
          * Gets a description of this Character's inventory.
          * @return A list of Strings representing the names of the Item objects in this Character's inventory.
          */
