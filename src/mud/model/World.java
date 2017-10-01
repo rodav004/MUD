@@ -55,6 +55,21 @@ public class World {
 		theRoom.addItem(new Item(itemName,itemDescription));
 		return true;
 	}
+	
+	public boolean characterExists(String charName) {
+		assert charName != null : "Parameter 'charName' should not be null!";
+		return findCharacter(charName) != null;
+	}
+	
+	public boolean moveCharacter(String user, String direction) {
+		assert direction != null : "Parameter 'direction' should not be null";
+		Character theCharacter = findCharacter(user);
+		if (theCharacter == null) {
+			return false;
+		}
+		String result = theCharacter.move(direction);
+		return result != null;
+	}
 
         /**
          * Finds a Room with a given name within the model.

@@ -21,7 +21,8 @@ public class Game {
          * an object of type Game.
          */
 	public void start() {
-		
+		world = new OurWorld();
+		/*	
 		// Room 1
 		
 		// Room 1 items
@@ -47,6 +48,7 @@ public class Game {
 		room2.setDoor(new Door(room1), Direction.NORTH);
 		
 		world = new Room[]{ room1, room2 };
+		*/
 		
 	}
         /**
@@ -64,15 +66,20 @@ public class Game {
 		assert userName != null; assert cmd != null;
 		String result = null;
 
-		mud.model.Character user = findCharacter(userName);
 		Action act = cmd.getAction();
-		if (user == null) { 
+		if (!world.characterExists(userName)) { 
 			return "Couldn't find user " + userName + "!"; 
 		}
 		
 		switch (act) {
 			case MOVE:
-				result = user.move(cmd.getTarget());
+				boolean success = world.moveCharacter(userName, cmd.getTarget());
+				if (success) {
+					result = "Moved " + userName + " " + cmd.getTarget() + "!";
+				}
+				else {
+					result = "Unable to move " + userName + " " + cmd.getTarget() + "!";
+				}
 				break;
 			case TAKE:
 				throw new UnsupportedOperationException("Take not yet implemented");
@@ -89,29 +96,5 @@ public class Game {
 		assert result != null;
 
 		return result;
-	}
-        /**
-         * Creates a new player in the game's world. Since the Character class needs to be initialized
-         * with a location, and the Room class shouldn't be exposed to UserInterface if at all possible,
-         * it would be inappropriate to place a Character directly in a Room. Instead, use this method to
-         * create a Player with the supplied parameters.
-         * @param newName The name to give the new Player. Should not be null.
-         * @param newDescription The description to give the new Player. Should not be null.
-         * @param startingRoomName The name of the room to put the player in. If this value cannot be mapped to a
-         * Room in the Game, this method will fail. Should not be null.
-         * @return A boolean representing whether the Player was successfully created.
-         */
-	public boolean newPlayer(String newName, String newDescription, String startingRoomName) {
-		assert newName != null; assert newDescription != null; assert startingRoomName != null;
-		assert world != null;
-		
-		Room startingRoom = findRoom(startingRoomName);
-		
-		if (startingRoom == null) {
-			return false;
-		}
-		
-		Player p = new Player(newName, newDescription, startingRoom);
-		return true;	
 	}
 }
