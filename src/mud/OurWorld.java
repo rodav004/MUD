@@ -4,10 +4,10 @@ public class OurWorld extends mud.model.World {
 
 	public OurWorld() {
 		newRoom("Nice Room", "This is a nice room.");
-		addItem("Nice Room", Proto.Items.APPLE.make());
+		addItems("Nice Room", Proto.Items.APPLE, Proto.Items.TORCH);
 
 		newRoom("Okay Room", "This is an okay room.");
-		addItem("Okay Room", Proto.Items.ROCK.make());
+		addItems("Okay Room", Proto.Items.ROCK, Proto.Items.PEN);
 	}
 
 	public boolean[] addItems(String roomName, Proto.Items... theItems) {
