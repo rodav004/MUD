@@ -18,7 +18,7 @@ public class OurWorld extends mud.model.World {
 		}
 		return results;
 	}
-	public boolean addItem(String roomName, Description desc) {
+	public boolean addItem(String roomName, Proto.Description desc) {
 		return addItem(roomName, desc.name, desc.description);
 	}
 
