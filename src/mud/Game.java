@@ -67,6 +67,8 @@ public class Game {
 		String result = null;
 
 		Action act = cmd.getAction();
+		String trg = cmd.getTarget();
+
 		if (!world.characterExists(userName)) { 
 			return "Couldn't find user " + userName + "!"; 
 		}
@@ -95,17 +97,12 @@ public class Game {
 		return result;
 	}
 
-	private String look(String userName) {
-		assert userName != null : "Parameter 'userName' should not be null!";
+	private String lookAround(Session session) {
 		String result = "";
 
-		String locationName = world.locationOfCharacter(userName);
-		assert locationName != null : "The Character should exist and be in a place!";
-
-
-		result = result + world.locationDescription(locationName) + "\n";
+		result = result + world.nearbyDescription(session.userRef);
 		
-		String[] itemNames = world.getItems(locationName);
+		String[] itemNames = world.nearbyItems(session.userRef);
 		if (itemNames.length > 0) {
 			result = result + "This room contains:\n";
 			
@@ -117,7 +114,28 @@ public class Game {
 		return result;
 	}
 
-	public boolean newPlayer(String userName, String description, String startingRoom) {
-		return world.newPlayer(userName, description, startingRoom);
+	private String lookAt(Session session, String target) {
+		
 	}
+	
+	private int currentSessionID = 0;
+	private int getNextSessionID() {
+		currentSessionID++;
+		return currentSessionID;
+	}
+	public Game.Session login(String userName, String description, String startingRoom) {
+		Object ref = world.newPlayer(userName, description, startingRoom);
+		return new Game.Session(nextSessionID(), ref);
+	}
+	
+	public static class Session {
+		public Session(int sessionID, Object userRef) {
+			this.sessionID = sessionID;
+			this.userRef = userRef;
+		}
+		public final int sessionID;
+		public final userRef;
+	}
+
+
 }

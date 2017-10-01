@@ -19,24 +19,24 @@ public class World {
          * @param newDescription The description to give the new Player. Should not be null.
          * @param startingRoomName The name of the room to put the player in. If this value cannot be mapped to a
          * Room in the Game, this method will fail. Should not be null.
-         * @return A boolean representing whether the Player was successfully created.
+         * @return A reference to the created object.
          */
-	public boolean newPlayer(String newName, String newDescription, String startingRoomName) {
+	public Object newPlayer(String newName, String newDescription, String startingRoomName) {
 		assert newName != null; assert newDescription != null; assert startingRoomName != null;
 		assert world != null;
 		
 		if (findCharacter(newName) != null) {
-			return false;
+			return null;
 		}
 
 		Room startingRoom = findRoom(startingRoomName);
 		
 		if (startingRoom == null) {
-			return false;
+			return null;
 		}
 		
 		Player p = new Player(newName, newDescription, startingRoom);
-		return true;	
+		return p;	
 	}
 	
 	public boolean newRoom(String roomName, String roomDescription) {
@@ -61,13 +61,12 @@ public class World {
 		return findCharacter(charName) != null;
 	}
 	
-	public String moveCharacter(String user, String direction) {
-		assert direction != null : "Parameter 'direction' should not be null";
-		Character theCharacter = findCharacter(user);
-		if (theCharacter == null) {
-			return "Couldn't find character!";
-		}
-		return theCharacter.move(direction);
+	public String moveCharacter(Object charRef, String direction) {
+		return moveCharacter((Character) charRef, direction);
+	}
+
+	private String moveCharacter(Character character, String direction) {
+		return character.move(direction);
 	}
 
 	public String locationOfCharacter(String charName) {
@@ -80,31 +79,20 @@ public class World {
 		}
 		return result;
 	}
-	
-	public String[] getItems(String roomName) {
-		assert roomName != null : "Parameter 'roomName' should not be null!";
-		
-		String[] result = null;
-		
-		Room theRoom = findRoom(roomName);
 
-		if (theRoom != null) {
-			result = theRoom.getItems();
-		}
-		return result;
+	public String[] nearbyItems(Object charRef) {
+		return getNearbyItems( (Character) charRef);
+	}
+	private String[] nearbyItems(Character theCharacter) {
+		return theCharacter.getLocation().getItems();
 	}
 
-	public String locationDescription(String roomName) {
-		assert roomName != null : "Parameter 'roomName' should not be null!";
+	public String nearbyDescription(Object charRef) {
+		return nearByDescription((Character) charRef);
+	}
 
-		String result = null;
-		
-		Room theRoom = findRoom(roomName);
-		if (theRoom != null) {
-			result = theRoom.getDescription();
-		}
-
-		return result;
+	private String nearbyDescription(Character theCharacter) {
+		return theCharacter.getLocation().getDescription();
 	}
 
         /**
