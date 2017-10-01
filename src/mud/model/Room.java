@@ -121,7 +121,11 @@ class Room extends GameObject {
 	* @return An array of the names of the Item objects in this Room.
 	*/
 	public String[] getItems() {
-		return (String[]) items.toArray();
+		String[] result = new String[items.size()];
+		for (int i = 0; i < items.size(); i++) {
+			result[i] = items.get(i).getName();	
+		}
+		return result;
 	}
 	
 	/**
