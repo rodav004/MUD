@@ -1,5 +1,6 @@
 package mud.model;
-
+import java.util.List;
+import java.util.ArrayList;
 public class World {
         /**
          * Represents the game world.
@@ -8,7 +9,7 @@ public class World {
          * it is imperative that this field is not simply
          * exposed via a getter.
          */
-	private Room[] world;
+	private List<Room> world = new ArrayList<>();
         /**
          * Creates a new player in the game's world. Since the Character class needs to be initialized
          * with a location, and the Room class shouldn't be exposed to UserInterface if at all possible,
@@ -24,6 +25,10 @@ public class World {
 		assert newName != null; assert newDescription != null; assert startingRoomName != null;
 		assert world != null;
 		
+		if (findCharacter(newName) != null) {
+			return false;
+		}
+
 		Room startingRoom = findRoom(startingRoomName);
 		
 		if (startingRoom == null) {
@@ -33,6 +38,24 @@ public class World {
 		Player p = new Player(newName, newDescription, startingRoom);
 		return true;	
 	}
+	
+	public boolean newRoom(String roomName, String roomDescription) {
+		if (findRoom(roomName) != null) {
+			return false;
+		}
+		world.add(new Room(roomName, roomDescription, null, null, null));
+		return true;
+	}
+
+	public boolean addItem(String roomName, String itemName, String itemDescription) {
+		Room theRoom = findRoom(roomName);
+		if (theRoom == null) {
+			return false;
+		}
+		theRoom.addItem(new Item(itemName,itemDescription));
+		return true;
+	}
+
         /**
          * Finds a Room with a given name within the model.
          * This method is private and should not be used by other classes,

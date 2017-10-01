@@ -13,7 +13,7 @@ public class Game {
          * it is imperative that this field is not simply
          * exposed via a getter.
          */
-	private Room[] world;
+	private World world;
         
         /**
          * Starts the game. Many other methods on Game will fail
@@ -113,42 +113,5 @@ public class Game {
 		
 		Player p = new Player(newName, newDescription, startingRoom);
 		return true;	
-	}
-        /**
-         * Finds a Room with a given name within the model.
-         * This method is private and should not be used by other classes,
-         * as that would expose the Room class.
-         * @param roomName The name of the Room to find. Should not be null.
-         * @return The found Room, or null if no Room was found.
-         */
-	private Room findRoom(String roomName) {
-		assert roomName != null;
-		assert world != null;
-		for (Room aRoom : world) {
-			if (aRoom.getName().equals(roomName)) {
-				return aRoom;
-			}
-		}
-		return null;
-	}
-        /**
-         * Finds a Character with a given name within the model.
-         * This method is private and should not be used by other classes,
-         * as that would expose the Character class.
-         * @param charName The name of the Character to find. Should not be null.
-         * @return The found Character, or null if no Character was found.
-         */
-	private mud.model.Character findCharacter(String charName) {
-		assert charName != null;
-		assert world != null;
-
-		mud.model.Character result = null;
-		for (Room aRoom : world) {
-			result = aRoom.findCharacter(charName);
-			if (result != null) {
-				break;
-			}
-		}
-		return result;
 	}
 }
