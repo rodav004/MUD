@@ -70,6 +70,43 @@ public class World {
 		return theCharacter.move(direction);
 	}
 
+	public String locationOfCharacter(String charName) {
+		assert charName != null : "Parameter 'charName' should not be null!";
+
+		String result = null;
+		Character theCharacter = findCharacter(charName);
+		if (theCharacter != null) {
+			result = theCharacter.getLocation().getName();
+		}
+		return result;
+	}
+	
+	public String[] getItems(String roomName) {
+		assert roomName != null : "Parameter 'roomName' should not be null!";
+		
+		String[] result = null;
+		
+		Room theRoom = findRoom(roomName);
+
+		if (theRoom != null) {
+			result = theRoom.getItems();
+		}
+		return result;
+	}
+
+	public String locationDescription(String roomName) {
+		assert roomName != null : "Parameter 'roomName' should not be null!";
+
+		String result = null;
+		
+		Room theRoom = findRoom(roomName);
+		if (theRoom != null) {
+			result = theRoom.getDescription();
+		}
+
+		return result;
+	}
+
         /**
          * Finds a Room with a given name within the model.
          * This method is private and should not be used by other classes,

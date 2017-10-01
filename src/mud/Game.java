@@ -75,6 +75,9 @@ public class Game {
 			case MOVE:
 				result = world.moveCharacter(userName, cmd.getTarget());
 				break;
+			case LOOK:
+				result = look(userName);
+				break;
 			case TAKE:
 				throw new UnsupportedOperationException("Take not yet implemented");
 				// break;
@@ -88,6 +91,28 @@ public class Game {
 				break;
 		}
 		assert result != null;
+
+		return result;
+	}
+
+	private String look(String userName) {
+		assert userName != null : "Parameter 'userName' should not be null!";
+		String result = "";
+
+		String locationName = world.locationOfCharacter(userName);
+		assert locationName != null : "The Character should exist and be in a place!";
+
+
+		result = result + world.locationDescription(locationName) + "\n";
+		
+		String[] itemNames = world.getItems(locationName);
+		if (itemNames.length > 0) {
+			result = result + "This room contains:\n";
+			
+			for (String itemName : itemNames) {
+				result = result + itemName + "\n";
+			}
+		}
 
 		return result;
 	}
