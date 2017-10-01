@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"mud"}]
+packageSearchIndex = [{"l":"mud"},{"l":"mud.model"}]
