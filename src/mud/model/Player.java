@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * A Player is a human controlled
  * Character within the MUD.
  */
-public class Player extends Character {
+class Player extends Character {
 	public Player(String name, String description, Room location, List<Item> inventory) {
                 super(name, description,location,inventory);
         }

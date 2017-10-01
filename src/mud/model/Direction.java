@@ -3,7 +3,7 @@ package mud.model;
 /**
 * The directional inputs that the MUD understands.
 */
-public enum Direction {
+enum Direction {
   	NORTH, SOUTH, EAST, WEST;
   
 	public static final int count = Direction.values().length;

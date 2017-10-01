@@ -4,7 +4,7 @@ package mud.model;
  * Although it does not inherit from GameObject,
  * Door is considered to be a model class.
  */
-public class Door {
+class Door {
 	/**
 	 * The Room this Door points to.
          * This is a public final field, so it cannot be modified.

@@ -7,7 +7,7 @@ import java.util.List;
  * As it is abstract, this class cannot be instantiated. Consider using
  * Player or Mob, or create your own subclass.
  */
-public abstract class Character extends GameObject {
+abstract class Character extends GameObject {
         /**
          * Gets the Room this Character is in.
          * This method should not be called by classes other

@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Character objects also know what Room they are in and are the ones
  * primarily responsible for managing that relationship.
  */
-public class Room extends GameObject {
+class Room extends GameObject {
 	private List<Item> items;
 	private List<Character> characters;
 	private Door[] doors;
