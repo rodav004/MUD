@@ -8,7 +8,7 @@ public class UserInterface {
 	
 	private static Scanner input;
 
-	public static void main(String[] args) {
+	public static void launch() {
 		Game game = new Game();
 		game.start();
 
