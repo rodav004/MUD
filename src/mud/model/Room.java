@@ -1,5 +1,4 @@
 package mud.model;
-import mud.Items;
 import java.util.List;
 import java.util.ArrayList;
 
