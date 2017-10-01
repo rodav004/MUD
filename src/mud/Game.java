@@ -97,4 +97,8 @@ public class Game {
 
 		return result;
 	}
+
+	public boolean newPlayer(String userName, String description, String startingRoom) {
+		return world.newPlayer(userName, description, startingRoom);
+	}
 }
