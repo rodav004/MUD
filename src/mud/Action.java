@@ -8,6 +8,7 @@ public enum Action {
     MOVE,
     TAKE,
     ATTACK,
+    LOOK,
     EXIT;
         
         /**
@@ -50,6 +51,15 @@ public enum Action {
 	        case "ATTACK":
 			result = Action.ATTACK;
 		  	break;
+		case "OBSERVE":
+		case "INSPECT":
+		case "PEEP":
+		case "VIEW":
+		case "SEE":
+		case "INVESTIGATE":
+		case "LOOK":
+			result = Action.LOOK;
+			break;
 		case "ABORT":
 		case "QUIT":
 		case "EXIT":
