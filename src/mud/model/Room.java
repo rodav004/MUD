@@ -36,23 +36,7 @@ class Room extends GameObject {
 			this.doors = new Door[Direction.count];
 		}
 	}
-	/**
-	* Convenience constructor. Primarily differs in that instead of providing a list of Item objects, you can
-	* instead supply an array of Items values. The result of calling this constructor is equivalent to creating an array of
-	* Items values, calling make() on each of them, storing that as a list, and supplying that to the items parameter of the primary
-	* constructor. Using Items is generally safer as it prevents you from having a reference to the Item objects in this Room, which
-	* eliminates an entire category of bugs.
-	* @param name The name of this Room.
-	* @param description The description of this Room.
-	* @param items An array of Items values, which will be converted to Item objects using Items.make().
-	* @param characters Then Character objects initially in this room.
-	* @param doors The exits to this room, as an array of Door objects, where each position in the array 
-	* maps to a specific direction. The length of this array should be equal to the number of values in Direction. If
-	* there is no door in a certain direction, that position in the array should have a value of null.
-	*/
-	public Room(String name, String description, Items[] items, List<Character> characters,Door[] doors) {
-		this(name,description,Items.make(items),characters,doors);
-	}
+
 	/**
 	* Installs a Door in a given Direction.
 	* @param door The door to install.
