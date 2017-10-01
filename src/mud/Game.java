@@ -73,13 +73,7 @@ public class Game {
 		
 		switch (act) {
 			case MOVE:
-				boolean success = world.moveCharacter(userName, cmd.getTarget());
-				if (success) {
-					result = "Moved " + userName + " " + cmd.getTarget() + "!";
-				}
-				else {
-					result = "Unable to move " + userName + " " + cmd.getTarget() + "!";
-				}
+				result = world.moveCharacter(userName, cmd.getTarget());
 				break;
 			case TAKE:
 				throw new UnsupportedOperationException("Take not yet implemented");

@@ -61,14 +61,13 @@ public class World {
 		return findCharacter(charName) != null;
 	}
 	
-	public boolean moveCharacter(String user, String direction) {
+	public String moveCharacter(String user, String direction) {
 		assert direction != null : "Parameter 'direction' should not be null";
 		Character theCharacter = findCharacter(user);
 		if (theCharacter == null) {
-			return false;
+			return "Couldn't find character!";
 		}
-		String result = theCharacter.move(direction);
-		return result != null;
+		return theCharacter.move(direction);
 	}
 
         /**
